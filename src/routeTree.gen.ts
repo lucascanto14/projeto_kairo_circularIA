@@ -10,14 +10,25 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BateriasRouteImport } from './routes/baterias'
 import { Route as CadastrarRouteImport } from './routes/cadastrar'
 import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as EmpresaRouteImport } from './routes/empresa'
+import { Route as InteligenciaRouteImport } from './routes/inteligencia'
+import { Route as JornadaRouteImport } from './routes/jornada'
+import { Route as MapaRouteImport } from './routes/mapa'
 import { Route as MarketplaceRouteImport } from './routes/marketplace'
 import { Route as MatchesRouteImport } from './routes/matches'
+import { Route as OportunidadeRouteImport } from './routes/oportunidade'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BateriasRoute = BateriasRouteImport.update({
+  id: '/baterias',
+  path: '/baterias',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CadastrarRoute = CadastrarRouteImport.update({
@@ -30,6 +41,26 @@ const DashboardRoute = DashboardRouteImport.update({
   path: '/dashboard',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EmpresaRoute = EmpresaRouteImport.update({
+  id: '/empresa',
+  path: '/empresa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InteligenciaRoute = InteligenciaRouteImport.update({
+  id: '/inteligencia',
+  path: '/inteligencia',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JornadaRoute = JornadaRouteImport.update({
+  id: '/jornada',
+  path: '/jornada',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MapaRoute = MapaRouteImport.update({
+  id: '/mapa',
+  path: '/mapa',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MarketplaceRoute = MarketplaceRouteImport.update({
   id: '/marketplace',
   path: '/marketplace',
@@ -40,44 +71,106 @@ const MatchesRoute = MatchesRouteImport.update({
   path: '/matches',
   getParentRoute: () => rootRouteImport,
 } as any)
+const OportunidadeRoute = OportunidadeRouteImport.update({
+  id: '/oportunidade',
+  path: '/oportunidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/baterias': typeof BateriasRoute
   '/cadastrar': typeof CadastrarRoute
   '/dashboard': typeof DashboardRoute
+  '/empresa': typeof EmpresaRoute
+  '/inteligencia': typeof InteligenciaRoute
+  '/jornada': typeof JornadaRoute
+  '/mapa': typeof MapaRoute
   '/marketplace': typeof MarketplaceRoute
   '/matches': typeof MatchesRoute
+  '/oportunidade': typeof OportunidadeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/baterias': typeof BateriasRoute
   '/cadastrar': typeof CadastrarRoute
   '/dashboard': typeof DashboardRoute
+  '/empresa': typeof EmpresaRoute
+  '/inteligencia': typeof InteligenciaRoute
+  '/jornada': typeof JornadaRoute
+  '/mapa': typeof MapaRoute
   '/marketplace': typeof MarketplaceRoute
   '/matches': typeof MatchesRoute
+  '/oportunidade': typeof OportunidadeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/baterias': typeof BateriasRoute
   '/cadastrar': typeof CadastrarRoute
   '/dashboard': typeof DashboardRoute
+  '/empresa': typeof EmpresaRoute
+  '/inteligencia': typeof InteligenciaRoute
+  '/jornada': typeof JornadaRoute
+  '/mapa': typeof MapaRoute
   '/marketplace': typeof MarketplaceRoute
   '/matches': typeof MatchesRoute
+  '/oportunidade': typeof OportunidadeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/cadastrar' | '/dashboard' | '/marketplace' | '/matches'
+  fullPaths:
+    | '/'
+    | '/baterias'
+    | '/cadastrar'
+    | '/dashboard'
+    | '/empresa'
+    | '/inteligencia'
+    | '/jornada'
+    | '/mapa'
+    | '/marketplace'
+    | '/matches'
+    | '/oportunidade'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/cadastrar' | '/dashboard' | '/marketplace' | '/matches'
+  to:
+    | '/'
+    | '/baterias'
+    | '/cadastrar'
+    | '/dashboard'
+    | '/empresa'
+    | '/inteligencia'
+    | '/jornada'
+    | '/mapa'
+    | '/marketplace'
+    | '/matches'
+    | '/oportunidade'
   id:
-    '__root__' | '/' | '/cadastrar' | '/dashboard' | '/marketplace' | '/matches'
+    | '__root__'
+    | '/'
+    | '/baterias'
+    | '/cadastrar'
+    | '/dashboard'
+    | '/empresa'
+    | '/inteligencia'
+    | '/jornada'
+    | '/mapa'
+    | '/marketplace'
+    | '/matches'
+    | '/oportunidade'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BateriasRoute: typeof BateriasRoute
   CadastrarRoute: typeof CadastrarRoute
   DashboardRoute: typeof DashboardRoute
+  EmpresaRoute: typeof EmpresaRoute
+  InteligenciaRoute: typeof InteligenciaRoute
+  JornadaRoute: typeof JornadaRoute
+  MapaRoute: typeof MapaRoute
   MarketplaceRoute: typeof MarketplaceRoute
   MatchesRoute: typeof MatchesRoute
+  OportunidadeRoute: typeof OportunidadeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -87,6 +180,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/baterias': {
+      id: '/baterias'
+      path: '/baterias'
+      fullPath: '/baterias'
+      preLoaderRoute: typeof BateriasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/cadastrar': {
@@ -103,6 +203,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DashboardRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/empresa': {
+      id: '/empresa'
+      path: '/empresa'
+      fullPath: '/empresa'
+      preLoaderRoute: typeof EmpresaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/inteligencia': {
+      id: '/inteligencia'
+      path: '/inteligencia'
+      fullPath: '/inteligencia'
+      preLoaderRoute: typeof InteligenciaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jornada': {
+      id: '/jornada'
+      path: '/jornada'
+      fullPath: '/jornada'
+      preLoaderRoute: typeof JornadaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mapa': {
+      id: '/mapa'
+      path: '/mapa'
+      fullPath: '/mapa'
+      preLoaderRoute: typeof MapaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/marketplace': {
       id: '/marketplace'
       path: '/marketplace'
@@ -117,15 +245,28 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MatchesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/oportunidade': {
+      id: '/oportunidade'
+      path: '/oportunidade'
+      fullPath: '/oportunidade'
+      preLoaderRoute: typeof OportunidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BateriasRoute: BateriasRoute,
   CadastrarRoute: CadastrarRoute,
   DashboardRoute: DashboardRoute,
+  EmpresaRoute: EmpresaRoute,
+  InteligenciaRoute: InteligenciaRoute,
+  JornadaRoute: JornadaRoute,
+  MapaRoute: MapaRoute,
   MarketplaceRoute: MarketplaceRoute,
   MatchesRoute: MatchesRoute,
+  OportunidadeRoute: OportunidadeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
