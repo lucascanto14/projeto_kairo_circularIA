@@ -9,7 +9,6 @@ Esta documentação destrincha a arquitetura visual, os componentes de interface
 ## Links do Projeto
 
 * **Aplicação Web (Demonstração Interativa):** [Kairo CycleIA Web App](https://id-preview-a726bdbb--e7237fc5-c905-46d6-a12f-757bc35b9008.lovable.app/)
-* **Repositório do Código-Fonte:** [lucascanto14/projeto_kairo_cycleia](https://github.com/lucascanto14/projeto_kairo_cycleia)
 
 ---
 
