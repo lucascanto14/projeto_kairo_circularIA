@@ -21,6 +21,7 @@ import { Route as MarketplaceRouteImport } from './routes/marketplace'
 import { Route as MatchesRouteImport } from './routes/matches'
 import { Route as OportunidadeRouteImport } from './routes/oportunidade'
 import { Route as ConversasIdRouteImport } from './routes/conversas.$id'
+import { Route as EmpresaIndexRouteImport } from './routes/empresa.index'
 import { Route as EmpresaConversasRouteImport } from './routes/empresa.conversas'
 import { Route as EmpresaDemandaRouteImport } from './routes/empresa.demanda'
 import { Route as EmpresaDocumentacaoRouteImport } from './routes/empresa.documentacao'
@@ -87,6 +88,11 @@ const ConversasIdRoute = ConversasIdRouteImport.update({
   path: '/conversas/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EmpresaIndexRoute = EmpresaIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EmpresaRoute,
+} as any)
 const EmpresaConversasRoute = EmpresaConversasRouteImport.update({
   id: '/conversas',
   path: '/conversas',
@@ -131,13 +137,13 @@ export interface FileRoutesByFullPath {
   '/empresa/documentacao': typeof EmpresaDocumentacaoRoute
   '/empresa/plano': typeof EmpresaPlanoRoute
   '/empresa/seguranca': typeof EmpresaSegurancaRoute
+  '/empresa/': typeof EmpresaIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/baterias': typeof BateriasRoute
   '/cadastrar': typeof CadastrarRoute
   '/dashboard': typeof DashboardRoute
-  '/empresa': typeof EmpresaRouteWithChildren
   '/inteligencia': typeof InteligenciaRoute
   '/jornada': typeof JornadaRoute
   '/mapa': typeof MapaRoute
@@ -150,6 +156,7 @@ export interface FileRoutesByTo {
   '/empresa/documentacao': typeof EmpresaDocumentacaoRoute
   '/empresa/plano': typeof EmpresaPlanoRoute
   '/empresa/seguranca': typeof EmpresaSegurancaRoute
+  '/empresa': typeof EmpresaIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -170,6 +177,7 @@ export interface FileRoutesById {
   '/empresa/documentacao': typeof EmpresaDocumentacaoRoute
   '/empresa/plano': typeof EmpresaPlanoRoute
   '/empresa/seguranca': typeof EmpresaSegurancaRoute
+  '/empresa/': typeof EmpresaIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -191,13 +199,13 @@ export interface FileRouteTypes {
     | '/empresa/documentacao'
     | '/empresa/plano'
     | '/empresa/seguranca'
+    | '/empresa/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/baterias'
     | '/cadastrar'
     | '/dashboard'
-    | '/empresa'
     | '/inteligencia'
     | '/jornada'
     | '/mapa'
@@ -210,6 +218,7 @@ export interface FileRouteTypes {
     | '/empresa/documentacao'
     | '/empresa/plano'
     | '/empresa/seguranca'
+    | '/empresa'
   id:
     | '__root__'
     | '/'
@@ -229,6 +238,7 @@ export interface FileRouteTypes {
     | '/empresa/documentacao'
     | '/empresa/plano'
     | '/empresa/seguranca'
+    | '/empresa/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -332,6 +342,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConversasIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/empresa/': {
+      id: '/empresa/'
+      path: '/'
+      fullPath: '/empresa/'
+      preLoaderRoute: typeof EmpresaIndexRouteImport
+      parentRoute: typeof EmpresaRoute
+    }
     '/empresa/conversas': {
       id: '/empresa/conversas'
       path: '/conversas'
@@ -376,6 +393,7 @@ interface EmpresaRouteChildren {
   EmpresaDocumentacaoRoute: typeof EmpresaDocumentacaoRoute
   EmpresaPlanoRoute: typeof EmpresaPlanoRoute
   EmpresaSegurancaRoute: typeof EmpresaSegurancaRoute
+  EmpresaIndexRoute: typeof EmpresaIndexRoute
 }
 
 const EmpresaRouteChildren: EmpresaRouteChildren = {
@@ -384,6 +402,7 @@ const EmpresaRouteChildren: EmpresaRouteChildren = {
   EmpresaDocumentacaoRoute: EmpresaDocumentacaoRoute,
   EmpresaPlanoRoute: EmpresaPlanoRoute,
   EmpresaSegurancaRoute: EmpresaSegurancaRoute,
+  EmpresaIndexRoute: EmpresaIndexRoute,
 }
 
 const EmpresaRouteWithChildren =
