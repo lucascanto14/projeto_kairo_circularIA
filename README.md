@@ -1,26 +1,29 @@
-# CycleIA — Documentação de Interface do Usuário (UI/UX)
+# CircularIA / Kairo — Documentação de Interface do Usuário (UI/UX)
 
-O **CycleIA** é uma plataforma inteligente e inclusiva de mobilidade sustentável, monitoramento telemétrico e logística otimizada voltada para o ecossistema de transporte e agronegócio. 
+A **CircularIA** é uma plataforma digital B2B e B2C de conexão e inteligência voltada para a economia circular e sustentabilidade de baterias e componentes elétricos pós-primeira aplicação. 
 
-Esta documentação destrincha a arquitetura visual, os componentes de interface (UI) e a experiência do usuário (UX) disponíveis na versão web.
+Em vez de atuar como recicladora, transportadora ou laboratório físico de diagnóstico, a solução funciona como uma camada digital de integração. A plataforma organiza dados técnicos e operacionais de ativos (como State of Health - SoH, química, capacidade e localização) e os cruza com perfis de demanda de parceiros homologados por meio de um algoritmo de matching explicável. O objetivo é priorizar e viabilizar as melhores alternativas de reutilização, remanufatura, segunda vida e reciclagem no mercado brasileiro.
+
+Esta documentação destrincha a arquitetura visual, os componentes de interface (UI) e a experiência do usuário (UX) desenvolvidos para a prototipagem web do projeto.
 
 ---
 
 ## Links do Projeto
 
-* **Aplicação Web (Demonstração Interativa):** [Kairo CycleIA Web App](https://id-preview-a726bdbb--e7237fc5-c905-46d6-a12f-757bc35b9008.lovable.app/)
+* **Aplicação Web (Demonstração Interativa):** [CircularIA / Kairo Web App](https://id-preview-a726bdbb--e7237fc5-c905-46d6-a12f-757bc35b9008.lovable.app/)
+* **Repositório do Código-Fonte:** [lucascanto14/projeto_kairo_cycleia](https://github.com/lucascanto14/projeto_kairo_cycleia)
 
 ---
 
 ## Sistema de Design & Identidade Visual
 
-* **Modo Padrão:** *Dark Mode* elegante com contraste acessível para ambientes rurais, urbanos e de alta luminosidade.
+* **Modo Padrão:** *Dark Mode* elegante com contraste acessível para ambientes operacionais e corporativos.
 * **Paleta de Cores Principais:**
-  * **Verde Neon / Esmeralda:** Representa eficiência energética, rotas sustentáveis e status operacional ideal.
+  * **Verde Neon / Esmeralda:** Representa eficiência energética, rotas sustentáveis, reciclagem e status operacional ideal.
   * **Azul Elétrico / Ciano:** Destinado a métricas térmicas, refrigeração da carga, conectividade IoT e inteligência de dados.
   * **Amarelo / Laranja (Alerta):** Pontos de atenção na rota, manutenção preventiva e oscilações térmicas brandas.
   * **Vermelho (Crítico):** Falhas mecânicas, picos de degradação térmica ou imprevistos graves no trajeto.
-* **Tipografia:** Sans-serif moderna, otimizada para leitura rápida e legibilidade em telas de dispositivos móveis montados no painel de veículos.
+* **Tipografia:** Sans-serif moderna, otimizada para leitura rápida e legibilidade em telas de dispositivos móveis e painéis de controle.
 
 ---
 
@@ -30,7 +33,7 @@ Esta documentação destrincha a arquitetura visual, os componentes de interface
 A tela inicial reúne em tempo real todas as variáveis operacionais críticas do motorista e da frota.
 
 * **Header (Barra Superior):**
-  * Logo **Kairo / CycleIA** integrado com indicador de status de frota.
+  * Logo integrado com indicador de status de frota.
   * Barra de conectividade em tempo real (4G/Satélite) e relógio digital.
   * Seletor de perfil e central de notificações.
 * **Widget de Rotas e Navegação GPS:**
@@ -53,7 +56,7 @@ A tela inicial reúne em tempo real todas as variáveis operacionais críticas d
 * **Seletor de Carga & Sensibilidade:**
   * Formulário/Dropdown para definir a carga transportada, permitindo que a IA configure os limites de variação térmica aceitáveis.
 * **Calculadora de Impacto Energético e Térmico:**
-  * Comparativo entre a rota tradicional (mais curta em distância) e a **Rota Kairo/CycleIA** (otimizada para consumo de bateria e preservação da carga).
+  * Comparativo entre a rota tradicional (mais curta em distância) e a rota otimizada (para consumo de bateria e preservação da carga).
 * **Alertas Preditivos de Bordo:**
   * Pop-ups e cards informativos avisando o condutor sobre trechos de alta trepidação, risco de elevação da temperatura interna ou orientação de pré-resfriamento na tomada.
 
