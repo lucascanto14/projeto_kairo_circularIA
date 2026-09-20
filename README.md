@@ -1,4 +1,4 @@
-# CircularIA / Kairo — Documentação de Interface do Usuário (UI/UX)
+# CircularIA  — Documentação de Interface do Usuário (UI/UX)
 
 A **CircularIA** é uma plataforma digital B2B e B2C de conexão e inteligência voltada para a economia circular e sustentabilidade de baterias e componentes elétricos pós-primeira aplicação. 
 
