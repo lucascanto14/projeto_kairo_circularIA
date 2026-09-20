@@ -12,7 +12,7 @@ O objetivo principal do projeto e criar uma camada digital de conexao e intelige
 
 Voce pode visualizar a demonstracao da interface e navegacao interativa atraves do link abaixo:
 
-* [Exibicao do Modelo / Preview da Aplicacao](https://id-preview-a726bdbb--e7237fc5-c905-46d6-a12f-757bc35b9008.lovable.app/)
+* [Exibicao do Modelo / Preview da Aplicacao](https://loop-smart-match.lovable.app/)
 
 ---
 
