@@ -1,39 +1,37 @@
-# Plano — Protótipo CircularIA
+# Atualização focada: acesso PF/PJ e Mapa Intelligence
 
 ## Objetivo
-Criar um protótipo B2B responsivo e navegável para apresentação no Hackathon Jump Start 2026, demonstrando cadastro de ativos, matching explicável por IA e inteligência de mercado.
+Preservar os fluxos atuais da CircularIA e alterar somente duas áreas: uma experiência demonstrativa de cadastro/login para pessoa física e jurídica, e o Mapa da Circularidade totalmente exclusivo do CircularIA Intelligence.
 
-## Experiência e navegação
-- Criar uma página inicial institucional com a proposta, o fluxo de circularidade e os três destinos de maior valor.
-- Criar uma área interna com navegação lateral para: Visão Geral, Marketplace, Cadastrar Ativo, Matches da IA, Mapa da Circularidade, Inteligência de Mercado, Minhas Baterias, Minha Empresa e Jornada da Bateria.
-- Manter os fluxos principais conectados: cadastrar ativo → analisar oportunidades → comparar matches → abrir oportunidade.
-- Incluir estados interativos demonstrativos nos filtros, formulário em quatro etapas, interesses no marketplace e marcadores do mapa.
+## 1. Cadastro e login demonstrativos
+- Adicionar na tela inicial os acessos **Entrar** e **Criar conta**.
+- Criar uma rota de entrada com e-mail, senha, recuperação demonstrativa e seis atalhos de perfis de demonstração.
+- Criar um cadastro em etapas, começando pela escolha **Pessoa Física / Pessoa Jurídica**.
+- Para PF, incluir dados pessoais, perfil de uso, verificações, documento, senha de acesso e senha de transação; registro profissional será opcional.
+- Para PJ, incluir dados da empresa, perfis de atuação, responsável legal, pergunta condicional sobre responsável técnico, documentação, senha de acesso e senha de transação.
+- Simular envio e conclusão com status claros e a mensagem institucional de verificação solicitada.
+- Adicionar o perfil demonstrativo **Pessoa Física**, preservando os cinco perfis atuais.
+- Adaptar o menu para exibir **Minha Conta** para PF e **Minha Empresa** para PJ, mantendo as páginas e fluxos existentes.
+- Guardar apenas o estado demonstrativo necessário no navegador; não implementar autenticação real nem armazenar documentos ou senhas reais.
 
-## Telas
-1. Landing page com proposta, CTA e fluxo de funcionamento.
-2. Dashboard com indicadores e gráficos de destinos e químicas.
-3. Cadastro em quatro etapas, incluindo o aviso obrigatório sobre SoH.
-4. Resultado da IA com três matches, scoring demonstrativo e explicação dos fatores.
-5. Marketplace com filtros e cards de ativos.
-6. Mapa visual do Brasil com categorias e gargalos regionais.
-7. Inteligência da Circularidade com distribuição regional, mercados, tendências e insight demonstrativo.
-8. Perfil da EcoStorage Energia com interesses, capacidade, oportunidades e histórico.
-9. Jornada visual de rastreabilidade da bateria.
+## 2. Mapa exclusivo do CircularIA Intelligence
+- Marcar a aba do mapa com cadeado quando o perfil não tiver Intelligence.
+- Para perfis gratuitos, substituir integralmente o conteúdo do mapa pela mensagem de recurso Intelligence e pelo botão **Conhecer CircularIA Intelligence**.
+- Para perfis Intelligence, manter o mapa real e implementar modos visuais funcionais: Pontos, Oferta, Demanda, Segunda Vida, Remanufatura e Reciclagem.
+- Fazer cada modo alterar os marcadores/intensidades do mapa, sem botões inertes.
+- Tornar funcionais os filtros de estado, região, química, tipo de ativo, agente e destinação.
+- Ao selecionar estado/região, reenquadrar o mapa e atualizar o resumo lateral com indicadores demonstrativos agregados.
+- Manter anonimização: códigos, regiões aproximadas e dados agregados, nunca identidade ou localização exata.
 
-## Direção visual
-- Interface corporativa e industrial, desktop-first e responsiva.
-- Azul-marinho, superfícies claras em branco/cinza e turquesa para circularidade.
-- Tipografia tecnológica, ícones minimalistas, gráficos e indicadores densos, sem estética de folhas ou natureza genérica.
-- Animações discretas de entrada, progresso e interação, respeitando redução de movimento.
+## Validação
+- Validar criação PF e PJ, campos condicionais, status e entrada pelos seis perfis demonstrativos.
+- Confirmar **Minha Conta** para PF e **Minha Empresa** para PJ.
+- Confirmar que o perfil gratuito não renderiza mapa nem dados geográficos.
+- Confirmar que um perfil Intelligence alterna os seis modos, filtra NMC, seleciona São Paulo e atualiza mapa e painel.
+- Verificar desktop e mobile, erros da prévia e metadados das novas páginas.
 
-## Regras de demonstração
-- Identificar números, empresas, matches, tendências e transações como demonstrativos ou fictícios.
-- Apresentar a IA como apoio à decisão com fatores explicáveis, nunca como garantia técnica ou de segurança.
-- Não alegar diagnóstico físico, sensores ou integração real com BMS.
-
-## Implementação técnica
-- Organizar a experiência em rotas TanStack, com componentes reutilizáveis para navegação, indicadores, gráficos, badges e cards.
-- Criar tokens semânticos no sistema visual e carregar fontes pela página raiz.
-- Usar dados locais de demonstração e lógica de scoring no navegador, sem backend.
-- Validar navegação, formulário, layout desktop/mobile e ausência de erros na prévia.
-- Adicionar títulos e descrições sociais próprios para cada tela.
+## Detalhes técnicos
+- Manter TanStack Router, componentes e tokens visuais atuais.
+- Usar rotas públicas dedicadas para entrada e cadastro de conta.
+- Implementar autenticação e uploads como simulação local, pois esta etapa não exige serviço externo nem persistência real.
+- Usar círculos proporcionais e agrupamentos visuais no Leaflet para representar heatmaps sem adicionar uma dependência incompatível.
