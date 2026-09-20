@@ -1,4 +1,4 @@
-# Kairo (CycleIA) — Documentação de Interface do Usuário (UI/UX)
+# CycleIA — Documentação de Interface do Usuário (UI/UX)
 
 O **Kairo / CycleIA** é uma plataforma inteligente e inclusiva de mobilidade sustentável, monitoramento telemétrico e logística otimizada voltada para o ecossistema de transporte e agronegócio. 
 
