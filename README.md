@@ -106,7 +106,7 @@ Siga os passos abaixo para executar a aplicacao web em seu computador.
 * npm ou yarn instalado
 
 ### Passo a Passo
- 
+ teste
 1. Clone o repositorio:
 ```bash
 git clone [https://github.com/lucascanto14/projeto_kairo_circularIA.git](https://github.com/lucascanto14/projeto_kairo_circularIA.git)
