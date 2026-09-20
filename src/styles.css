@@ -172,3 +172,9 @@
 @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 @utility animate-rise { animation: rise .45s ease-out both; }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; animation-duration: .01ms !important; } }
+
+/* Leaflet uses its own positioning model; these rules keep the real map inside the product surface. */
+.leaflet-container { font-family: var(--font-sans); background: var(--muted); z-index: 0; }
+.leaflet-control-container .leaflet-control { border-color: var(--border); }
+.leaflet-popup-content-wrapper, .leaflet-popup-tip { background: var(--card); color: var(--card-foreground); }
+.leaflet-popup-content { letter-spacing: 0; }
