@@ -20,6 +20,11 @@ import { Route as MapaRouteImport } from './routes/mapa'
 import { Route as MarketplaceRouteImport } from './routes/marketplace'
 import { Route as MatchesRouteImport } from './routes/matches'
 import { Route as OportunidadeRouteImport } from './routes/oportunidade'
+import { Route as EmpresaConversasRouteImport } from './routes/empresa.conversas'
+import { Route as EmpresaDemandaRouteImport } from './routes/empresa.demanda'
+import { Route as EmpresaDocumentacaoRouteImport } from './routes/empresa.documentacao'
+import { Route as EmpresaPlanoRouteImport } from './routes/empresa.plano'
+import { Route as EmpresaSegurancaRouteImport } from './routes/empresa.seguranca'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -76,32 +81,67 @@ const OportunidadeRoute = OportunidadeRouteImport.update({
   path: '/oportunidade',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EmpresaConversasRoute = EmpresaConversasRouteImport.update({
+  id: '/conversas',
+  path: '/conversas',
+  getParentRoute: () => EmpresaRoute,
+} as any)
+const EmpresaDemandaRoute = EmpresaDemandaRouteImport.update({
+  id: '/demanda',
+  path: '/demanda',
+  getParentRoute: () => EmpresaRoute,
+} as any)
+const EmpresaDocumentacaoRoute = EmpresaDocumentacaoRouteImport.update({
+  id: '/documentacao',
+  path: '/documentacao',
+  getParentRoute: () => EmpresaRoute,
+} as any)
+const EmpresaPlanoRoute = EmpresaPlanoRouteImport.update({
+  id: '/plano',
+  path: '/plano',
+  getParentRoute: () => EmpresaRoute,
+} as any)
+const EmpresaSegurancaRoute = EmpresaSegurancaRouteImport.update({
+  id: '/seguranca',
+  path: '/seguranca',
+  getParentRoute: () => EmpresaRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/baterias': typeof BateriasRoute
   '/cadastrar': typeof CadastrarRoute
   '/dashboard': typeof DashboardRoute
-  '/empresa': typeof EmpresaRoute
+  '/empresa': typeof EmpresaRouteWithChildren
   '/inteligencia': typeof InteligenciaRoute
   '/jornada': typeof JornadaRoute
   '/mapa': typeof MapaRoute
   '/marketplace': typeof MarketplaceRoute
   '/matches': typeof MatchesRoute
   '/oportunidade': typeof OportunidadeRoute
+  '/empresa/conversas': typeof EmpresaConversasRoute
+  '/empresa/demanda': typeof EmpresaDemandaRoute
+  '/empresa/documentacao': typeof EmpresaDocumentacaoRoute
+  '/empresa/plano': typeof EmpresaPlanoRoute
+  '/empresa/seguranca': typeof EmpresaSegurancaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/baterias': typeof BateriasRoute
   '/cadastrar': typeof CadastrarRoute
   '/dashboard': typeof DashboardRoute
-  '/empresa': typeof EmpresaRoute
+  '/empresa': typeof EmpresaRouteWithChildren
   '/inteligencia': typeof InteligenciaRoute
   '/jornada': typeof JornadaRoute
   '/mapa': typeof MapaRoute
   '/marketplace': typeof MarketplaceRoute
   '/matches': typeof MatchesRoute
   '/oportunidade': typeof OportunidadeRoute
+  '/empresa/conversas': typeof EmpresaConversasRoute
+  '/empresa/demanda': typeof EmpresaDemandaRoute
+  '/empresa/documentacao': typeof EmpresaDocumentacaoRoute
+  '/empresa/plano': typeof EmpresaPlanoRoute
+  '/empresa/seguranca': typeof EmpresaSegurancaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -109,13 +149,18 @@ export interface FileRoutesById {
   '/baterias': typeof BateriasRoute
   '/cadastrar': typeof CadastrarRoute
   '/dashboard': typeof DashboardRoute
-  '/empresa': typeof EmpresaRoute
+  '/empresa': typeof EmpresaRouteWithChildren
   '/inteligencia': typeof InteligenciaRoute
   '/jornada': typeof JornadaRoute
   '/mapa': typeof MapaRoute
   '/marketplace': typeof MarketplaceRoute
   '/matches': typeof MatchesRoute
   '/oportunidade': typeof OportunidadeRoute
+  '/empresa/conversas': typeof EmpresaConversasRoute
+  '/empresa/demanda': typeof EmpresaDemandaRoute
+  '/empresa/documentacao': typeof EmpresaDocumentacaoRoute
+  '/empresa/plano': typeof EmpresaPlanoRoute
+  '/empresa/seguranca': typeof EmpresaSegurancaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -131,6 +176,11 @@ export interface FileRouteTypes {
     | '/marketplace'
     | '/matches'
     | '/oportunidade'
+    | '/empresa/conversas'
+    | '/empresa/demanda'
+    | '/empresa/documentacao'
+    | '/empresa/plano'
+    | '/empresa/seguranca'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -144,6 +194,11 @@ export interface FileRouteTypes {
     | '/marketplace'
     | '/matches'
     | '/oportunidade'
+    | '/empresa/conversas'
+    | '/empresa/demanda'
+    | '/empresa/documentacao'
+    | '/empresa/plano'
+    | '/empresa/seguranca'
   id:
     | '__root__'
     | '/'
@@ -157,6 +212,11 @@ export interface FileRouteTypes {
     | '/marketplace'
     | '/matches'
     | '/oportunidade'
+    | '/empresa/conversas'
+    | '/empresa/demanda'
+    | '/empresa/documentacao'
+    | '/empresa/plano'
+    | '/empresa/seguranca'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -164,7 +224,7 @@ export interface RootRouteChildren {
   BateriasRoute: typeof BateriasRoute
   CadastrarRoute: typeof CadastrarRoute
   DashboardRoute: typeof DashboardRoute
-  EmpresaRoute: typeof EmpresaRoute
+  EmpresaRoute: typeof EmpresaRouteWithChildren
   InteligenciaRoute: typeof InteligenciaRoute
   JornadaRoute: typeof JornadaRoute
   MapaRoute: typeof MapaRoute
@@ -252,15 +312,69 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OportunidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/empresa/conversas': {
+      id: '/empresa/conversas'
+      path: '/conversas'
+      fullPath: '/empresa/conversas'
+      preLoaderRoute: typeof EmpresaConversasRouteImport
+      parentRoute: typeof EmpresaRoute
+    }
+    '/empresa/demanda': {
+      id: '/empresa/demanda'
+      path: '/demanda'
+      fullPath: '/empresa/demanda'
+      preLoaderRoute: typeof EmpresaDemandaRouteImport
+      parentRoute: typeof EmpresaRoute
+    }
+    '/empresa/documentacao': {
+      id: '/empresa/documentacao'
+      path: '/documentacao'
+      fullPath: '/empresa/documentacao'
+      preLoaderRoute: typeof EmpresaDocumentacaoRouteImport
+      parentRoute: typeof EmpresaRoute
+    }
+    '/empresa/plano': {
+      id: '/empresa/plano'
+      path: '/plano'
+      fullPath: '/empresa/plano'
+      preLoaderRoute: typeof EmpresaPlanoRouteImport
+      parentRoute: typeof EmpresaRoute
+    }
+    '/empresa/seguranca': {
+      id: '/empresa/seguranca'
+      path: '/seguranca'
+      fullPath: '/empresa/seguranca'
+      preLoaderRoute: typeof EmpresaSegurancaRouteImport
+      parentRoute: typeof EmpresaRoute
+    }
   }
 }
+
+interface EmpresaRouteChildren {
+  EmpresaConversasRoute: typeof EmpresaConversasRoute
+  EmpresaDemandaRoute: typeof EmpresaDemandaRoute
+  EmpresaDocumentacaoRoute: typeof EmpresaDocumentacaoRoute
+  EmpresaPlanoRoute: typeof EmpresaPlanoRoute
+  EmpresaSegurancaRoute: typeof EmpresaSegurancaRoute
+}
+
+const EmpresaRouteChildren: EmpresaRouteChildren = {
+  EmpresaConversasRoute: EmpresaConversasRoute,
+  EmpresaDemandaRoute: EmpresaDemandaRoute,
+  EmpresaDocumentacaoRoute: EmpresaDocumentacaoRoute,
+  EmpresaPlanoRoute: EmpresaPlanoRoute,
+  EmpresaSegurancaRoute: EmpresaSegurancaRoute,
+}
+
+const EmpresaRouteWithChildren =
+  EmpresaRoute._addFileChildren(EmpresaRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BateriasRoute: BateriasRoute,
   CadastrarRoute: CadastrarRoute,
   DashboardRoute: DashboardRoute,
-  EmpresaRoute: EmpresaRoute,
+  EmpresaRoute: EmpresaRouteWithChildren,
   InteligenciaRoute: InteligenciaRoute,
   JornadaRoute: JornadaRoute,
   MapaRoute: MapaRoute,
