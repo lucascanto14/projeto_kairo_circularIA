@@ -1,109 +1,86 @@
-# CircularIA  — Documentação de Interface do Usuário (UI/UX)
+# CircularIA - Guia da Interface do Usuario (UI/UX) e Execucao
 
-A **CircularIA** é uma plataforma digital B2B e B2C de conexão e inteligência voltada para a economia circular e sustentabilidade de baterias e componentes elétricos pós-primeira aplicação. 
+## Objetivo do Projeto
 
-Em vez de atuar como recicladora, transportadora ou laboratório físico de diagnóstico, a solução funciona como uma camada digital de integração. A plataforma organiza dados técnicos e operacionais de ativos (como State of Health - SoH, química, capacidade e localização) e os cruza com perfis de demanda de parceiros homologados por meio de um algoritmo de matching explicável. O objetivo é priorizar e viabilizar as melhores alternativas de reutilização, remanufatura, segunda vida e reciclagem no mercado brasileiro.
+A CircularIA e uma plataforma digital B2B e B2C desenvolvida para conectar proprietarios de baterias e componentes pos-primeira vida (como montadoras, concessionarias, frotistas e pessoas fisicas) a recicladores, remanufaturadores e consumidores de segunda vida[cite: 1]. 
 
-Esta documentação destrincha a arquitetura visual, os componentes de interface (UI) e a experiência do usuário (UX) desenvolvidos para a prototipagem web do projeto.
-
----
-
-## Links do Projeto
-
-* **Aplicação Web (Demonstração Interativa):** [CircularIA / Kairo Web App](https://id-preview-a726bdbb--e7237fc5-c905-46d6-a12f-757bc35b9008.lovable.app/)
+O objetivo principal do projeto e criar uma camada digital de conexao e inteligencia de mercado que otimize a identificacao de destinos compativeis para cada ativo, reduzindo o esforco de busca, promovendo a rastreabilidade e prolongando o valor funcional e material das baterias no ecossistema de eletrificacao[cite: 1].
 
 ---
 
-## Sistema de Design & Identidade Visual
+## Visao Geral da Interface
 
-* **Modo Padrão:** *Dark Mode* elegante com contraste acessível para ambientes operacionais e corporativos.
-* **Paleta de Cores Principais:**
-  * **Verde Neon / Esmeralda:** Representa eficiência energética, rotas sustentáveis, reciclagem e status operacional ideal.
-  * **Azul Elétrico / Ciano:** Destinado a métricas térmicas, refrigeração da carga, conectividade IoT e inteligência de dados.
-  * **Amarelo / Laranja (Alerta):** Pontos de atenção na rota, manutenção preventiva e oscilações térmicas brandas.
-  * **Vermelho (Crítico):** Falhas mecânicas, picos de degradação térmica ou imprevistos graves no trajeto.
-* **Tipografia:** Sans-serif moderna, otimizada para leitura rápida e legibilidade em telas de dispositivos móveis e painéis de controle.
+A interface web da CircularIA organiza-se em torno da jornada de conexao entre ofertantes e demandantes de baterias e componentes pos-primeira vida:
+
+Cadastro -> Visualizacao/Busca -> Matching Inteligente -> Negociacao/Contato -> Registro da Destinacao
 
 ---
 
-## Mapeamento e Destrinchamento das Telas (UI)
+## Destrinchamento das Telas e Componentes
 
-### 1. Painel Principal (Dashboard de Operação)
-A tela inicial reúne em tempo real todas as variáveis operacionais críticas do motorista e da frota.
-
-* **Header (Barra Superior):**
-  * Logo integrado com indicador de status de frota.
-  * Barra de conectividade em tempo real (4G/Satélite) e relógio digital.
-  * Seletor de perfil e central de notificações.
-* **Widget de Rotas e Navegação GPS:**
-  * Visão espacial interativa do trajeto agrícola/urbano.
-  * Sobreposição de camada com severidade do piso (asfalto, terra batida, estradas vicinais acidentadas).
-  * Indicação visual da **Rota Lean (Sustentável)** destacada em cor fluorescente.
-* **Módulo de Eficiência Energética (Bateria / Tração):**
-  * Indicador circular/barras do Estado de Carga da Bateria (SoC - *State of Charge*).
-  * Gráfico de consumo dinâmico (Wh/km ou kWh/h).
-  * Estimativa preditiva de autonomia restante calculada via IA.
-* **Módulo de Refrigeração da Carga (Cold Chain):**
-  * Termômetro digital em destaque com o valor da temperatura do baú frigorífico em tempo real (ex.: `+3.5°C`).
-  * Indicador de estabilidade da cadeia do frio conforme o tipo de produto transportado (morangos, vegetais, carnes).
+### 1. Pagina Inicial / Dashboard (/)
+Ponto de entrada e painel principal de controle do usuario:
+* Metriciamento principal (KPIs): total de ativos cadastrados, oportunidades de matching ativas e resumo de destinacoes concluidas (Segunda Vida, Remanufatura, Reciclagem).
+* Atalhos rapidos para cadastro de baterias e busca na vitrine.
+* Menu de navegacao com acesso a Vitrine, Meus Anuncios, Minhas Demandas e Matches.
 
 ---
 
-### 2. Módulo de Roteamento Preditivo e IA Contextual
-Área voltada para o planejamento e ajuste inteligente de viagens.
-
-* **Seletor de Carga & Sensibilidade:**
-  * Formulário/Dropdown para definir a carga transportada, permitindo que a IA configure os limites de variação térmica aceitáveis.
-* **Calculadora de Impacto Energético e Térmico:**
-  * Comparativo entre a rota tradicional (mais curta em distância) e a rota otimizada (para consumo de bateria e preservação da carga).
-* **Alertas Preditivos de Bordo:**
-  * Pop-ups e cards informativos avisando o condutor sobre trechos de alta trepidação, risco de elevação da temperatura interna ou orientação de pré-resfriamento na tomada.
+### 2. Vitrine e Marketplace (/marketplace)
+Area de exploracao e busca dos ativos disponiveis:
+* Cards de ativos exibindo imagem/icone, modelo, fabricante, quimica (ex: LFP, NMC), Estado de Saude (SoH) e localizacao aproximada.
+* Barra de busca com filtros por quimica, faixa de capacidade, tensao, SoH minimo, regiao e finalidade desejada (Segunda Vida, Remanufatura ou Reciclagem).
 
 ---
 
-### 3. Módulo de Telemetria e Saúde da Frota (BMS / Bateria)
-Painel focado no monitoramento preditivo e na prevenção de desgastes da bateria e do sistema térmico.
-
-* **Métricas de SoH (State of Health):**
-  * Visualização da saúde global do pack de baterias e histórico de degradação acumulada.
-* **Monitor Térmico das Células:**
-  * Mapa de calor das células do pack de baterias e verificação de obstrução por poeira/sujeira nos dutos de ventilação.
-* **Histórico de Recargas:**
-  * Registros e recomendações de carregamento (AC vs. DC Rápido), prevenindo estresse térmico desnecessário nas baterias.
+### 3. Detalhes do Ativo (/ativo/:id)
+Apresentacao completa das especificacoes tecnicas de uma bateria:
+* Ficha tecnica: identificacao, fabricante, modelo, ano, quantidade e dados eletricos/fisicos.
+* Origem dos dados: indicacao da fonte do SoH (Leitura BMS, Laudo Externo ou Declaracao do Proprietario).
+* Localizacao aproximada para preservacao de privacidade durante a negociacao preliminar.
+* Acao principal: botao para solicitacao de match e inicio de contato.
 
 ---
 
-### 4. Componentes Globais e Acessibilidade (UX)
-
-* **Barra de Navegação Inferior (Mobile Bottom Bar):**
-  * Atalhos diretos para: `Mapa/Navegação`, `Relatórios de Carga`, `Telemetria`, `Suporte` e `Configurações`.
-* **Design Responsivo:**
-  * Adaptado nativamente para telas de smartphones, tablets industriais e centrais multimídia automotivas.
-* **Atuação com Baixa Distração (Safety UX):**
-  * Botões de ação rápida com áreas de toque amplas (*touch targets*), otimizadas para uso rápido pelo motorista em trânsito.
+### 4. Formulario de Cadastro de Ativo (/cadastrar-ativo)
+Fluxo guiado em etapas para registro de novos ativos:
+* Passo 1: Identificacao geral (nome, fabricante, modelo, ano, quantidade).
+* Passo 2: Especificacoes tecnicas (quimica, tensao nominal, capacidade, SoH).
+* Passo 3: Origem dos dados tecnicos (BMS, Diagnostico Externo, Declaratorio).
+* Passo 4: Localizacao e anexos de fotos ou documentacao tecnica.
 
 ---
 
-## Tecnologias de Interface Utilizadas
+### 5. Painel do Motor de Matching (/matches)
+Interface de recomendacao e priorizacao de destinos:
+* Lista de compatibilidades com exibicao de Indice de Compatibilidade (%).
+* Detalhes explicativos dos fatores que geraram a pontuacao de compatibilidade.
+* Acoes para aceite ou recusa do match gerado.
 
-* **Framework Web:** React / Vite
-* **Estilização:** Tailwind CSS (estilização utilitária rápida e temas customizados)
-* **Componentes de UI:** Lucide React (iconografia) e componentes modulares
-* **Design System / Prototipagem:** Lovable / Figma
+---
+
+### 6. Perfil e Cadastro de Demanda (/demandas)
+Area destinada a compradores e recicladores para definicao de criterios de absorcao:
+* Formulario de criterios de compra: quimica aceita, faixa de SoH aceitavel, volume desejado e regiao geografica de interesse.
+
+---
+
+### 7. Central de Mensagens (/chat)
+* Chat interno para comunicacao direta entre ofertante e demandante apos o aceite do match.
+* Registro de desfecho final do ativo (Segunda Vida, Reciclado ou Remanufaturado).
 
 ---
 
 ## Como Executar o Projeto Localmente
 
+Siga os passos abaixo para executar a aplicacao web em seu computador.
+
+### Pre-requisitos
+* Node.js (versao 18.x ou superior)
+* npm ou yarn instalado
+
+### Passo a Passo
+
+1. Clone o repositorio:
 ```bash
-# Clone o repositório
-git clone [https://github.com/lucascanto14/projeto_kairo_cycleia.git](https://github.com/lucascanto14/projeto_kairo_cycleia.git)
-
-# Acesse a pasta do projeto
-cd projeto_kairo_cycleia
-
-# Instale as dependências
-npm install
-
-# Execute a aplicação em ambiente de desenvolvimento
-npm run dev
+git clone [https://github.com/lucascanto14/projeto_kairo_circularIA.git](https://github.com/lucascanto14/projeto_kairo_circularIA.git)
