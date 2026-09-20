@@ -20,6 +20,7 @@ import { Route as MapaRouteImport } from './routes/mapa'
 import { Route as MarketplaceRouteImport } from './routes/marketplace'
 import { Route as MatchesRouteImport } from './routes/matches'
 import { Route as OportunidadeRouteImport } from './routes/oportunidade'
+import { Route as ConversasIdRouteImport } from './routes/conversas.$id'
 import { Route as EmpresaConversasRouteImport } from './routes/empresa.conversas'
 import { Route as EmpresaDemandaRouteImport } from './routes/empresa.demanda'
 import { Route as EmpresaDocumentacaoRouteImport } from './routes/empresa.documentacao'
@@ -81,6 +82,11 @@ const OportunidadeRoute = OportunidadeRouteImport.update({
   path: '/oportunidade',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConversasIdRoute = ConversasIdRouteImport.update({
+  id: '/conversas/$id',
+  path: '/conversas/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EmpresaConversasRoute = EmpresaConversasRouteImport.update({
   id: '/conversas',
   path: '/conversas',
@@ -119,6 +125,7 @@ export interface FileRoutesByFullPath {
   '/marketplace': typeof MarketplaceRoute
   '/matches': typeof MatchesRoute
   '/oportunidade': typeof OportunidadeRoute
+  '/conversas/$id': typeof ConversasIdRoute
   '/empresa/conversas': typeof EmpresaConversasRoute
   '/empresa/demanda': typeof EmpresaDemandaRoute
   '/empresa/documentacao': typeof EmpresaDocumentacaoRoute
@@ -137,6 +144,7 @@ export interface FileRoutesByTo {
   '/marketplace': typeof MarketplaceRoute
   '/matches': typeof MatchesRoute
   '/oportunidade': typeof OportunidadeRoute
+  '/conversas/$id': typeof ConversasIdRoute
   '/empresa/conversas': typeof EmpresaConversasRoute
   '/empresa/demanda': typeof EmpresaDemandaRoute
   '/empresa/documentacao': typeof EmpresaDocumentacaoRoute
@@ -156,6 +164,7 @@ export interface FileRoutesById {
   '/marketplace': typeof MarketplaceRoute
   '/matches': typeof MatchesRoute
   '/oportunidade': typeof OportunidadeRoute
+  '/conversas/$id': typeof ConversasIdRoute
   '/empresa/conversas': typeof EmpresaConversasRoute
   '/empresa/demanda': typeof EmpresaDemandaRoute
   '/empresa/documentacao': typeof EmpresaDocumentacaoRoute
@@ -176,6 +185,7 @@ export interface FileRouteTypes {
     | '/marketplace'
     | '/matches'
     | '/oportunidade'
+    | '/conversas/$id'
     | '/empresa/conversas'
     | '/empresa/demanda'
     | '/empresa/documentacao'
@@ -194,6 +204,7 @@ export interface FileRouteTypes {
     | '/marketplace'
     | '/matches'
     | '/oportunidade'
+    | '/conversas/$id'
     | '/empresa/conversas'
     | '/empresa/demanda'
     | '/empresa/documentacao'
@@ -212,6 +223,7 @@ export interface FileRouteTypes {
     | '/marketplace'
     | '/matches'
     | '/oportunidade'
+    | '/conversas/$id'
     | '/empresa/conversas'
     | '/empresa/demanda'
     | '/empresa/documentacao'
@@ -231,6 +243,7 @@ export interface RootRouteChildren {
   MarketplaceRoute: typeof MarketplaceRoute
   MatchesRoute: typeof MatchesRoute
   OportunidadeRoute: typeof OportunidadeRoute
+  ConversasIdRoute: typeof ConversasIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -312,6 +325,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OportunidadeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/conversas/$id': {
+      id: '/conversas/$id'
+      path: '/conversas/$id'
+      fullPath: '/conversas/$id'
+      preLoaderRoute: typeof ConversasIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/empresa/conversas': {
       id: '/empresa/conversas'
       path: '/conversas'
@@ -381,6 +401,7 @@ const rootRouteChildren: RootRouteChildren = {
   MarketplaceRoute: MarketplaceRoute,
   MatchesRoute: MatchesRoute,
   OportunidadeRoute: OportunidadeRoute,
+  ConversasIdRoute: ConversasIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
