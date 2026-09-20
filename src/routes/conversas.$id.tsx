@@ -7,7 +7,8 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useCircular } from "@/lib/circular-store";
-import { assets, counterparts, moderationExamples } from "@/lib/demo-data";
+import { assets, counterparts } from "@/lib/demo-data";
+import { moderationExamples } from "@/lib/moderation";
 
 export const Route = createFileRoute("/conversas/$id")({
   head: () => ({ meta: [
