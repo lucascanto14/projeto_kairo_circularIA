@@ -2,9 +2,9 @@
 
 ## Introducao e Objetivo do Projeto
 
-A CircularIA e uma plataforma digital B2B e B2C desenvolvida para conectar proprietarios de baterias e componentes pos-primeira vida (como montadoras, concessionarias, frotistas e pessoas fisicas) a recicladores, remanufaturadores e consumidores de segunda vida[cite: 1]. 
+A CircularIA e uma plataforma digital B2B e B2C desenvolvida para conectar proprietarios de baterias e componentes pos-primeira vida (como montadoras, concessionarias, frotistas e pessoas fisicas) a recicladores, remanufaturadores e consumidores de segunda vida. 
 
-O objetivo principal do projeto e criar uma camada digital de conexao e inteligencia de mercado que otimize a identificacao de destinos compativeis para cada ativo, reduzindo o esforco de busca, promovendo a rastreabilidade e prolongando o valor funcional e material das baterias no ecossistema de eletrificacao[cite: 1].
+O objetivo principal do projeto e criar uma camada digital de conexao e inteligencia de mercado que otimize a identificacao de destinos compativeis para cada ativo, reduzindo o esforco de busca, promovendo a rastreabilidade e prolongando o valor funcional e material das baterias no ecossistema de eletrificacao.
 
 ---
 
@@ -22,15 +22,15 @@ Esta secao contem os guias em video para demonstrar as principais funcionalidade
 
 ### 1. Visao Geral e Navegacao do Marketplace
 <!-- Insira aqui o video de navegacao na vitrine e filtros -->
-[![Tutorial - Visao Geral](https://img.youtube.com/vi/SEU_VIDEO_ID_AQUI/maxresdefault.jpg)](https://www.youtube.com/watch?v=SEU_VIDEO_ID_AQUI)
+[![Tutorial - Visao Geral](https://img.youtube.com/vi/SEU_VIDEO_ID_AQUI/maxresdefault.jpg)]
 
 ### 2. Passo a Passo: Cadastro de Ativos e Baterias
 <!-- Insira aqui o video tutorial de cadastro de novo ativo -->
-[![Tutorial - Cadastro de Ativos](https://img.youtube.com/vi/SEU_VIDEO_ID_AQUI/maxresdefault.jpg)](https://www.youtube.com/watch?v=SEU_VIDEO_ID_AQUI)
+[![Tutorial - Cadastro de Ativos](https://img.youtube.com/vi/SEU_VIDEO_ID_AQUI/maxresdefault.jpg)]
 
 ### 3. Funcionamento do Motor de Matching e Chat
 <!-- Insira aqui o video demonstrando o aceite de match e chat -->
-[![Tutorial - Matching e Chat](https://img.youtube.com/vi/SEU_VIDEO_ID_AQUI/maxresdefault.jpg)](https://www.youtube.com/watch?v=SEU_VIDEO_ID_AQUI)
+[![Tutorial - Matching e Chat](https://img.youtube.com/vi/SEU_VIDEO_ID_AQUI/maxresdefault.jpg)]
 
 ---
 
