@@ -1,604 +1,108 @@
-# Cycle AI
+# Kairo (CycleIA) — Documentação de Interface do Usuário (UI/UX)
 
-Crie um protótipo navegável de uma plataforma web B2B de economia circular para baterias e componentes de veículos eletrificados, desenvolvida para um projeto do Hackathon Jump Start 2026.
+O **Kairo / CycleIA** é uma plataforma inteligente e inclusiva de mobilidade sustentável, monitoramento telemétrico e logística otimizada voltada para o ecossistema de transporte e agronegócio. 
 
-A proposta da solução é criar um ecossistema inteligente de circularidade que conecte empresas ou usuários que possuem baterias e componentes disponíveis a recicladores, remanufaturadores e consumidores de segunda vida, utilizando Inteligência Artificial para fazer matching, recomendar destinos e gerar inteligência de mercado.
+Esta documentação destrincha a arquitetura visual, os componentes de interface (UI) e a experiência do usuário (UX) disponíveis na versão web.
 
-O objetivo não é ser apenas um marketplace. A plataforma deve mostrar três pilares:
+---
 
-Conexão entre oferta e demanda
+## Links do Projeto
 
-IA para recomendação de destinação
+* **Aplicação Web (Demonstração Interativa):** [Kairo CycleIA Web App](https://id-preview-a726bdbb--e7237fc5-c905-46d6-a12f-757bc35b9008.lovable.app/)
+* **Repositório do Código-Fonte:** [lucascanto14/projeto_kairo_cycleia](https://github.com/lucascanto14/projeto_kairo_cycleia)
 
-Inteligência de mercado sobre o ciclo de vida das baterias
+---
 
-Use provisoriamente o nome CircularIA no protótipo, mas deixe o nome facilmente substituível.
+## Sistema de Design & Identidade Visual
 
-IDENTIDADE VISUAL
+* **Modo Padrão:** *Dark Mode* elegante com contraste acessível para ambientes rurais, urbanos e de alta luminosidade.
+* **Paleta de Cores Principais:**
+  * **Verde Neon / Esmeralda:** Representa eficiência energética, rotas sustentáveis e status operacional ideal.
+  * **Azul Elétrico / Ciano:** Destinado a métricas térmicas, refrigeração da carga, conectividade IoT e inteligência de dados.
+  * **Amarelo / Laranja (Alerta):** Pontos de atenção na rota, manutenção preventiva e oscilações térmicas brandas.
+  * **Vermelho (Crítico):** Falhas mecânicas, picos de degradação térmica ou imprevistos graves no trajeto.
+* **Tipografia:** Sans-serif moderna, otimizada para leitura rápida e legibilidade em telas de dispositivos móveis montados no painel de veículos.
 
-Crie uma interface moderna, tecnológica, limpa e corporativa.
+---
 
-Referências visuais:
+## Mapeamento e Destrinchamento das Telas (UI)
 
- mobilidade do futuro;
+### 1. Painel Principal (Dashboard de Operação)
+A tela inicial reúne em tempo real todas as variáveis operacionais críticas do motorista e da frota.
 
- economia circular;
+* **Header (Barra Superior):**
+  * Logo **Kairo / CycleIA** integrado com indicador de status de frota.
+  * Barra de conectividade em tempo real (4G/Satélite) e relógio digital.
+  * Seletor de perfil e central de notificações.
+* **Widget de Rotas e Navegação GPS:**
+  * Visão espacial interativa do trajeto agrícola/urbano.
+  * Sobreposição de camada com severidade do piso (asfalto, terra batida, estradas vicinais acidentadas).
+  * Indicação visual da **Rota Lean (Sustentável)** destacada em cor fluorescente.
+* **Módulo de Eficiência Energética (Bateria / Tração):**
+  * Indicador circular/barras do Estado de Carga da Bateria (SoC - *State of Charge*).
+  * Gráfico de consumo dinâmico (Wh/km ou kWh/h).
+  * Estimativa preditiva de autonomia restante calculada via IA.
+* **Módulo de Refrigeração da Carga (Cold Chain):**
+  * Termômetro digital em destaque com o valor da temperatura do baú frigorífico em tempo real (ex.: `+3.5°C`).
+  * Indicador de estabilidade da cadeia do frio conforme o tipo de produto transportado (morangos, vegetais, carnes).
 
- energia;
+---
 
- tecnologia automotiva;
+### 2. Módulo de Roteamento Preditivo e IA Contextual
+Área voltada para o planejamento e ajuste inteligente de viagens.
 
- sustentabilidade;
+* **Seletor de Carga & Sensibilidade:**
+  * Formulário/Dropdown para definir a carga transportada, permitindo que a IA configure os limites de variação térmica aceitáveis.
+* **Calculadora de Impacto Energético e Térmico:**
+  * Comparativo entre a rota tradicional (mais curta em distância) e a **Rota Kairo/CycleIA** (otimizada para consumo de bateria e preservação da carga).
+* **Alertas Preditivos de Bordo:**
+  * Pop-ups e cards informativos avisando o condutor sobre trechos de alta trepidação, risco de elevação da temperatura interna ou orientação de pré-resfriamento na tomada.
 
- plataformas SaaS B2B.
+---
 
-Paleta predominante:
+### 3. Módulo de Telemetria e Saúde da Frota (BMS / Bateria)
+Painel focado no monitoramento preditivo e na prevenção de desgastes da bateria e do sistema térmico.
 
- azul-marinho escuro;
+* **Métricas de SoH (State of Health):**
+  * Visualização da saúde global do pack de baterias e histórico de degradação acumulada.
+* **Monitor Térmico das Células:**
+  * Mapa de calor das células do pack de baterias e verificação de obstrução por poeira/sujeira nos dutos de ventilação.
+* **Histórico de Recargas:**
+  * Registros e recomendações de carregamento (AC vs. DC Rápido), prevenindo estresse térmico desnecessário nas baterias.
 
- branco;
+---
 
- cinza claro;
+### 4. Componentes Globais e Acessibilidade (UX)
 
- verde/turquesa para elementos relacionados à circularidade e sustentabilidade.
+* **Barra de Navegação Inferior (Mobile Bottom Bar):**
+  * Atalhos diretos para: `Mapa/Navegação`, `Relatórios de Carga`, `Telemetria`, `Suporte` e `Configurações`.
+* **Design Responsivo:**
+  * Adaptado nativamente para telas de smartphones, tablets industriais e centrais multimídia automotivas.
+* **Atuação com Baixa Distração (Safety UX):**
+  * Botões de ação rápida com áreas de toque amplas (*touch targets*), otimizadas para uso rápido pelo motorista em trânsito.
 
-Evite aparência excessivamente “ecológica” com folhas e plantas. A plataforma deve parecer principalmente uma solução tecnológica e industrial.
+---
 
-Utilize cards, dashboards, gráficos, mapas, indicadores e ícones minimalistas.
+## Tecnologias de Interface Utilizadas
 
-O design deve ser responsivo, priorizando desktop.
+* **Framework Web:** React / Vite
+* **Estilização:** Tailwind CSS (estilização utilitária rápida e temas customizados)
+* **Componentes de UI:** Lucide React (iconografia) e componentes modulares
+* **Design System / Prototipagem:** Lovable / Figma
 
-TELA 1 — LANDING PAGE
+---
 
-Crie uma página inicial com forte comunicação da proposta.
+## Como Executar o Projeto Localmente
 
-Headline:
+```bash
+# Clone o repositório
+git clone [https://github.com/lucascanto14/projeto_kairo_cycleia.git](https://github.com/lucascanto14/projeto_kairo_cycleia.git)
 
-“Conectando baterias ao seu próximo ciclo de valor.”
+# Acesse a pasta do projeto
+cd projeto_kairo_cycleia
 
-Subheadline:
+# Instale as dependências
+npm install
 
-“Uma plataforma inteligente que conecta proprietários de baterias a recicladores, remanufaturadores e aplicações de segunda vida, utilizando IA para recomendar destinos e gerar inteligência para a economia circular.”
-
-Botões:
-
-Cadastrar bateria
-
-Encontrar oportunidades
-
-Logo abaixo, apresente visualmente o funcionamento:
-
-Bateria disponível → Cadastro de dados → IA analisa oportunidades → Matching → Segunda vida / Remanufatura / Reciclagem
-
-Crie também uma seção chamada:
-
-“Do resíduo ao ativo”
-
-explicando que uma bateria que deixou sua aplicação original ainda pode possuir valor econômico, energético ou material.
-
-Crie três cards:
-
-Reutilizar
-Prolongar o uso da bateria quando tecnicamente adequado.
-
-Remanufaturar
-Recuperar componentes e funcionalidade para novas aplicações.
-
-Reciclar
-Recuperar materiais críticos quando não houver alternativa de maior valor.
-
-TELA 2 — DASHBOARD PRINCIPAL
-
-Crie um dashboard B2B com menu lateral contendo:
-
- Visão Geral
-
- Marketplace
-
- Cadastrar Ativo
-
- Matches da IA
-
- Mapa da Circularidade
-
- Inteligência de Mercado
-
- Minhas Baterias
-
- Minha Empresa
-
-No dashboard, mostre cards com dados fictícios claramente identificados como “Dados demonstrativos”:
-
- Baterias cadastradas: 1.248
-
- Empresas participantes: 186
-
- Matches identificados: 327
-
- Baterias direcionadas para segunda vida: 42%
-
-Inclua gráfico:
-
-Destino dos ativos
-
- Segunda vida
-
- Remanufatura
-
- Reciclagem
-
-Outro gráfico:
-
-Oferta de baterias por química
-
- LFP
-
- NMC
-
- NCA
-
- Outros
-
-Esses números são apenas ilustrativos e devem estar identificados como dados fictícios para demonstração.
-
-TELA 3 — CADASTRO DE BATERIA / COMPONENTE
-
-Criar formulário moderno dividido em etapas.
-
-Etapa 1 — Identificação
-
-Campos:
-
- Tipo de ativo
-
- Bateria completa
-
- Módulo
-
- Célula
-
- Outro componente
-
- Fabricante
-
- Modelo
-
- Ano
-
- Número de série
-
-Etapa 2 — Características técnicas
-
- Química
-
- LFP
-
- NMC
-
- NCA
-
- Outra
-
- Capacidade nominal em kWh
-
- Tensão
-
- Peso estimado
-
- SoH, se disponível
-
- Condição geral
-
-O campo SoH deve conter:
-
-“Informação declarada ou proveniente de diagnóstico externo. A plataforma não realiza diagnóstico físico da bateria.”
-
-Etapa 3 — Localização
-
- CEP
-
- Cidade
-
- Estado
-
- Quantidade disponível
-
-Etapa 4 — Objetivo
-
-Opções:
-
- Quero vender
-
- Quero encontrar aplicação de segunda vida
-
- Quero remanufaturar
-
- Quero reciclar
-
- Quero receber recomendação da IA
-
-Botão final:
-
-“Analisar oportunidades”
-
-TELA 4 — RESULTADO DA IA / MATCHING INTELIGENTE
-
-Essa deve ser uma das telas mais importantes do protótipo.
-
-No topo:
-
-“Destinos recomendados pela CircularIA”
-
-Apresente a bateria cadastrada:
-
-Exemplo fictício:
-
-Bateria LFP
-Capacidade: 52 kWh
-SoH informado: 74%
-Localização: São José dos Campos – SP
-
-Mostrar três recomendações da IA:
-
-Match 1
-
-Empresa de armazenamento estacionário
-
-Compatibilidade: 94%
-
-Distância: 42 km
-
-Aplicação: segunda vida em sistema estacionário
-
-Motivos da recomendação:
-
- química compatível;
-
- SoH adequado ao perfil solicitado;
-
- alta demanda atual;
-
- baixa distância logística.
-
-Botão:
-Ver oportunidade
-
-Match 2
-
-Remanufaturador de baterias
-
-Compatibilidade: 81%
-
-Distância: 97 km
-
-Match 3
-
-Reciclador homologado
-
-Compatibilidade: 73%
-
-Distância: 125 km
-
-Crie também uma seção:
-
-“Por que a IA recomendou isso?”
-
-Mostrar visualmente os fatores utilizados:
-
- SoH disponível
-
- Química
-
- Localização
-
- Quantidade
-
- Demanda atual
-
- Tipo de aplicação
-
- Distância logística
-
-A IA deve ser apresentada como ferramenta de apoio à decisão, e não como sistema que determina autonomamente a destinação.
-
-TELA 5 — MARKETPLACE
-
-Criar marketplace B2B com cards de baterias e componentes disponíveis.
-
-Adicionar filtros:
-
- Tipo de bateria
-
- Química
-
- SoH
-
- Estado
-
- Quantidade
-
- Aplicação potencial
-
-Exemplos fictícios:
-
-Pack LFP — 48 kWh
-São Paulo – SP
-SoH informado: 76%
-Disponibilidade: 8 unidades
-
-Módulos NMC — 5 kWh
-Campinas – SP
-SoH informado: 82%
-Disponibilidade: 24 unidades
-
-Pack NCA — 65 kWh
-Curitiba – PR
-SoH informado: 58%
-Disponibilidade: 3 unidades
-
-Cada card deve ter:
-
- Ver detalhes
-
- Demonstrar interesse
-
- Solicitar Match
-
-TELA 6 — MAPA DA CIRCULARIDADE
-
-Criar um mapa interativo fictício do Brasil mostrando:
-
- baterias disponíveis;
-
- recicladores;
-
- remanufaturadores;
-
- consumidores de segunda vida;
-
- centros de coleta.
-
-Usar marcadores com categorias diferentes.
-
-Mostrar ao lado:
-
-“Oportunidades próximas”
-
-Exemplo:
-
-“Existem 3 potenciais destinos em um raio de 150 km.”
-
-Também mostrar:
-
-“Região com alta oferta e baixa capacidade de absorção”
-
-para demonstrar como a plataforma poderia identificar gargalos regionais.
-
-TELA 7 — BATTERY INTELLIGENCE
-
-Essa tela deve deixar claro que o diferencial da plataforma não é apenas marketplace.
-
-Título:
-
-“Inteligência da Circularidade”
-
-Subtítulo:
-
-“Transformando os dados da cadeia em decisões estratégicas.”
-
-Criar dashboards com dados fictícios:
-
-Oferta por região
-
-Sudeste
-Sul
-Nordeste
-Centro-Oeste
-Norte
-
-Químicas mais disponibilizadas
-
-LFP
-NMC
-NCA
-
-Principais destinos
-
-Segunda vida
-Remanufatura
-Reciclagem
-
-Mercados que mais demandam segunda vida
-
- armazenamento estacionário;
-
- energia solar;
-
- backup energético;
-
- aplicações industriais.
-
-Tendência de oferta
-
-Criar gráfico temporal fictício mostrando crescimento da disponibilidade de baterias ao longo dos próximos anos.
-
-Destacar:
-
-“Previsões baseadas em IA serão aprimoradas conforme a plataforma acumular dados históricos.”
-
-Criar também um card:
-
-Insight da IA
-
-Exemplo:
-
-“A oferta de baterias LFP cadastradas no Sudeste apresenta tendência de crescimento, enquanto a demanda por aplicações estacionárias também aumenta.”
-
-Deixar claro que é um exemplo demonstrativo, não previsão real.
-
-TELA 8 — PERFIL DE EMPRESA
-
-Exemplo:
-
-EcoStorage Energia
-
-Tipo:
-Consumidor de segunda vida
-
-Localização:
-Campinas – SP
-
-Interesses:
-
- LFP
-
- SoH superior a 65%
-
- Packs entre 30 e 80 kWh
-
-Capacidade mensal:
-20 packs
-
-Status:
-Empresa verificada
-
-Mostrar:
-
- oportunidades compatíveis;
-
- matches recebidos;
-
- histórico de interesse.
-
-TELA 9 — JORNADA DE UMA BATERIA
-
-Criar uma tela de rastreabilidade mostrando:
-
-Fabricada
-↓
-Primeira utilização automotiva
-↓
-Retirada da aplicação
-↓
-Cadastro na plataforma
-↓
-Matching realizado
-↓
-Segunda vida
-↓
-Reciclagem futura
-
-Essa tela deve representar visualmente o princípio da economia circular.
-
-FUNCIONAMENTO DA IA
-
-No protótipo, criar uma lógica demonstrativa de scoring.
-
-A recomendação deve considerar:
-
- tipo de bateria;
-
- química;
-
- SoH informado;
-
- localização;
-
- quantidade;
-
- demanda cadastrada;
-
- finalidade desejada;
-
- distância do potencial destino.
-
-Calcular uma porcentagem de compatibilidade fictícia, deixando explícito que o resultado é demonstrativo.
-
-Criar uma seção “Por que esse match?” para tornar a recomendação explicável.
-
-Não apresentar a IA como responsável por garantir segurança ou condição técnica da bateria.
-
-PERFIS DE USUÁRIO
-
-Criar dois fluxos principais:
-
-Quem possui baterias
-
- Montadora
-
- Frotista
-
- Concessionária
-
- Oficina
-
- Empresa
-
-Ações:
-cadastrar ativo → receber matches → comparar destinos → negociar.
-
-Quem procura baterias
-
- Reciclador
-
- Remanufaturador
-
- Empresa de segunda vida
-
-Ações:
-cadastrar interesse → encontrar ativos → receber alertas → realizar match.
-
-DIFERENCIAL ESTRATÉGICO
-
-Em diferentes pontos do protótipo, reforçar que a plataforma possui três níveis de valor:
-
-Conectar
-Criar um mercado entre quem possui e quem demanda baterias.
-
-Otimizar
-Utilizar IA para recomendar matches e destinos.
-
-Aprender
-Transformar os próprios dados da cadeia em inteligência sobre oferta, demanda e tendências.
-
-IMPORTANTE
-
-Este é um protótipo conceitual para apresentação em hackathon.
-
-Todos os números, empresas, matches, previsões e transações exibidos devem ser identificados como dados demonstrativos/fictícios, exceto quando forem apenas nomes genéricos.
-
-Não afirmar que a plataforma realiza diagnóstico físico real da bateria.
-
-Não criar funcionalidades que dependam de sensores ou integração com BMS como se já existissem.
-
-O objetivo principal do protótipo é demonstrar visualmente:
-
-1. cadastro da bateria;
-2. conexão com possíveis destinos;
-3. recomendação por IA;
-4. inteligência gerada pelos dados acumulados.
-
-Priorize uma experiência visual convincente para apresentação a uma banca do Hackathon Jump Start, com navegação funcional entre as principais telas e dados fictícios suficientes para demonstrar o conceito.
-
-This project was built with [Lovable](https://lovable.dev).
-
-**Live app**: https://loop-smart-match.lovable.app
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/e7237fc5-c905-46d6-a12f-757bc35b9008).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+# Execute a aplicação em ambiente de desenvolvimento
 npm run dev
-```
