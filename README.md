@@ -27,7 +27,6 @@ Esta secao contem os guias em video para demonstrar as principais funcionalidade
 <!-- Insira aqui o video tutorial de cadastro de novo ativo -->
 [![Visao Geral](https://img.youtube.com/watch?v=6h5V-Ctzqn4&list=PLGuaDXm5A0qY&index=2.jpg)](https://www.youtube.com/watch?v=6h5V-Ctzqn4&list=PLGuaDXm5A0qY&index=2)
 
-
 ### 3. Explicação da taxa e jornada da bateria
 <!-- Insira aqui o video demonstrando o aceite de match e chat -->
 [![jornada da bateria]([https://img.youtube.com/vi/SEU_VIDEO_ID_AQUI/maxresdefault.jpg](https://www.youtube.com/watch?v=lBJKcZokwcc&list=PLGuaDXm5A0qY&index=3))]
