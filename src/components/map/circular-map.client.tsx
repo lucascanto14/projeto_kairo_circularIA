@@ -33,7 +33,7 @@ function RegionEvents({ onRegion, onState }: { onRegion: (region: string) => voi
 
 function MapFocus({ state, region }: { state: string; region: string }) {
   const map = useMap();
-  useEffect(() => { const stateFocus = focusByState[state]; if (stateFocus) { map.flyTo(stateFocus.center, stateFocus.zoom, { duration: .8 }); return; } const regionFocus: Record<string, [number, number]> = { Norte: [-4, -61], Nordeste: [-9, -40], "Centro-Oeste": [-15.5, -54], Sudeste: [-21.5, -45], Sul: [-27.5, -51] }; const center = regionFocus[region]; if (center) map.flyTo(center, 5, { duration: .8 }); else map.flyTo(focusByState.Todos.center, 4, { duration: .8 }); }, [map, region, state]);
+  useEffect(() => { const stateFocus = focusByState[state]; if (stateFocus) { map.flyTo(stateFocus.center, stateFocus.zoom, { duration: .8 }); return; } const regionFocus: Record<string, [number, number]> = { Norte: [-4, -61], Nordeste: [-9, -40], "Centro-Oeste": [-15.5, -54], Sudeste: [-21.5, -45], Sul: [-27.5, -51] }; const center = regionFocus[region]; if (center) map.flyTo(center, 5, { duration: .8 }); else map.flyTo([-15.6, -51.8], 4, { duration: .8 }); }, [map, region, state]);
   return null;
 }
 
