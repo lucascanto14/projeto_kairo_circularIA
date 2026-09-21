@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Activity, BatteryCharging, BrainCircuit, Building2, CheckCircle2, ChevronRight, CircleGauge, Factory, LayoutDashboard, Lock, Map, Menu, MessageSquare, PackagePlus, Recycle, Search, ShieldCheck, Sparkles, Store, Users, X } from "lucide-react";
+import { Activity, BatteryCharging, BrainCircuit, Building2, CheckCircle2, ChevronRight, CircleGauge, Factory, LayoutDashboard, Lock, Map, Menu, MessageSquare, PackagePlus, Recycle, Search, ShieldCheck, Sparkles, Store, UserRound, Users, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { useCircular } from "@/lib/circular-store";
@@ -15,7 +15,7 @@ export function Brand({ inverse = false }: { inverse?: boolean }) {
 export function DemoBadge() { return <span className="inline-flex items-center gap-1 rounded-md border border-primary/25 bg-accent px-2 py-1 text-[10px] font-bold uppercase text-accent-foreground"><Sparkles className="size-3" />{demoLabel}</span>; }
 
 export function VerifiedBadge({ status = "Empresa verificada" }: { status?: string }) {
-  const ok = status === "Empresa verificada";
+  const ok = status === "Empresa verificada" || status === "Pessoa Física verificada";
   return <span className={cn("inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-bold", ok ? "bg-accent text-accent-foreground" : "bg-muted text-muted-foreground")}>{ok ? <ShieldCheck className="size-3" /> : <Lock className="size-3" />}{status}</span>;
 }
 
@@ -28,7 +28,7 @@ const nav = [
   { to: "/marketplace", label: "Marketplace", icon: Store },
   { to: "/cadastrar", label: "Cadastrar Ativo", icon: PackagePlus },
   { to: "/matches", label: "Matches Inteligentes", icon: BrainCircuit },
-  { to: "/mapa", label: "Mapa da Circularidade", icon: Map },
+  { to: "/mapa", label: "Mapa da Circularidade", icon: Map, plan: "intelligence" as const },
   { to: "/inteligencia", label: "Inteligência de Mercado", icon: Activity, plan: "intelligence" as const },
   { to: "/baterias", label: "Minhas Baterias", icon: BatteryCharging },
   { to: "/empresa", label: "Minha Empresa", icon: Building2 },
@@ -67,12 +67,14 @@ export function AppShell({ title, subtitle, children, actions }: { title: string
       <nav className="mt-5 space-y-1 pb-28">
         {nav.map(({ to, label, icon: Icon, plan }) => {
           const locked = plan ? !plans[plan] : false;
+          const itemLabel = to === "/empresa" && profile.accountType === "PF" ? "Minha Conta" : label;
+          const ItemIcon = to === "/empresa" && profile.accountType === "PF" ? UserRound : Icon;
           const active = to === "/empresa" ? path.startsWith("/empresa") : path === to;
           return <div key={to}>
             <Link to={to} onClick={() => setOpen(false)} className={cn("flex items-center gap-3 rounded-md px-3 py-2.5 text-sm font-medium transition-colors", active ? "bg-primary text-primary-foreground" : "text-sidebar-foreground hover:bg-sidebar-accent")}>
-              <Icon className="size-4" /><span className="flex-1">{label}</span>{locked && <Lock className="size-3 opacity-70" />}
+              <ItemIcon className="size-4" /><span className="flex-1">{itemLabel}</span>{locked && <Lock className="size-3 opacity-70" />}
             </Link>
-            {to === "/empresa" && path.startsWith("/empresa") && <div className="ml-6 mt-1 space-y-0.5 border-l border-sidebar-border pl-3">
+            {to === "/empresa" && path.startsWith("/empresa") && profile.accountType === "PJ" && <div className="ml-6 mt-1 space-y-0.5 border-l border-sidebar-border pl-3">
               {companyTabs.map((t) => <Link key={t.to} to={t.to} onClick={() => setOpen(false)} className={cn("block rounded-md px-2 py-1.5 text-xs font-medium", path === t.to ? "text-primary" : "text-muted-foreground hover:text-foreground")}>{t.label}</Link>)}
             </div>}
           </div>;
@@ -110,7 +112,7 @@ export function LockedFeature({ product, description, children }: { product: "Ci
 
 export function VerificationGate({ children }: { children: ReactNode }) {
   const { verification } = useCircular();
-  if (verification === "Empresa verificada") return <>{children}</>;
+  if (verification === "Empresa verificada" || verification === "Pessoa Física verificada") return <>{children}</>;
   return <div className="rounded-lg border border-secondary bg-secondary/40 p-5 text-sm">
     <p className="font-bold">Ação disponível apenas para empresas verificadas</p>
     <p className="mt-1 text-muted-foreground">Status atual: {verification}. Anunciar ativos, negociar, enviar e responder propostas e concluir operações exigem verificação concluída.</p>
