@@ -12,8 +12,10 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as BateriasRouteImport } from './routes/baterias'
 import { Route as CadastrarRouteImport } from './routes/cadastrar'
+import { Route as CriarContaRouteImport } from './routes/criar-conta'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as EmpresaRouteImport } from './routes/empresa'
+import { Route as EntrarRouteImport } from './routes/entrar'
 import { Route as InteligenciaRouteImport } from './routes/inteligencia'
 import { Route as JornadaRouteImport } from './routes/jornada'
 import { Route as MapaRouteImport } from './routes/mapa'
@@ -43,6 +45,11 @@ const CadastrarRoute = CadastrarRouteImport.update({
   path: '/cadastrar',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CriarContaRoute = CriarContaRouteImport.update({
+  id: '/criar-conta',
+  path: '/criar-conta',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DashboardRoute = DashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
@@ -51,6 +58,11 @@ const DashboardRoute = DashboardRouteImport.update({
 const EmpresaRoute = EmpresaRouteImport.update({
   id: '/empresa',
   path: '/empresa',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EntrarRoute = EntrarRouteImport.update({
+  id: '/entrar',
+  path: '/entrar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const InteligenciaRoute = InteligenciaRouteImport.update({
@@ -123,8 +135,10 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/baterias': typeof BateriasRoute
   '/cadastrar': typeof CadastrarRoute
+  '/criar-conta': typeof CriarContaRoute
   '/dashboard': typeof DashboardRoute
   '/empresa': typeof EmpresaRouteWithChildren
+  '/entrar': typeof EntrarRoute
   '/inteligencia': typeof InteligenciaRoute
   '/jornada': typeof JornadaRoute
   '/mapa': typeof MapaRoute
@@ -143,7 +157,9 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/baterias': typeof BateriasRoute
   '/cadastrar': typeof CadastrarRoute
+  '/criar-conta': typeof CriarContaRoute
   '/dashboard': typeof DashboardRoute
+  '/entrar': typeof EntrarRoute
   '/inteligencia': typeof InteligenciaRoute
   '/jornada': typeof JornadaRoute
   '/mapa': typeof MapaRoute
@@ -163,8 +179,10 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/baterias': typeof BateriasRoute
   '/cadastrar': typeof CadastrarRoute
+  '/criar-conta': typeof CriarContaRoute
   '/dashboard': typeof DashboardRoute
   '/empresa': typeof EmpresaRouteWithChildren
+  '/entrar': typeof EntrarRoute
   '/inteligencia': typeof InteligenciaRoute
   '/jornada': typeof JornadaRoute
   '/mapa': typeof MapaRoute
@@ -185,8 +203,10 @@ export interface FileRouteTypes {
     | '/'
     | '/baterias'
     | '/cadastrar'
+    | '/criar-conta'
     | '/dashboard'
     | '/empresa'
+    | '/entrar'
     | '/inteligencia'
     | '/jornada'
     | '/mapa'
@@ -205,7 +225,9 @@ export interface FileRouteTypes {
     | '/'
     | '/baterias'
     | '/cadastrar'
+    | '/criar-conta'
     | '/dashboard'
+    | '/entrar'
     | '/inteligencia'
     | '/jornada'
     | '/mapa'
@@ -224,8 +246,10 @@ export interface FileRouteTypes {
     | '/'
     | '/baterias'
     | '/cadastrar'
+    | '/criar-conta'
     | '/dashboard'
     | '/empresa'
+    | '/entrar'
     | '/inteligencia'
     | '/jornada'
     | '/mapa'
@@ -245,8 +269,10 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BateriasRoute: typeof BateriasRoute
   CadastrarRoute: typeof CadastrarRoute
+  CriarContaRoute: typeof CriarContaRoute
   DashboardRoute: typeof DashboardRoute
   EmpresaRoute: typeof EmpresaRouteWithChildren
+  EntrarRoute: typeof EntrarRoute
   InteligenciaRoute: typeof InteligenciaRoute
   JornadaRoute: typeof JornadaRoute
   MapaRoute: typeof MapaRoute
@@ -279,6 +305,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CadastrarRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/criar-conta': {
+      id: '/criar-conta'
+      path: '/criar-conta'
+      fullPath: '/criar-conta'
+      preLoaderRoute: typeof CriarContaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dashboard': {
       id: '/dashboard'
       path: '/dashboard'
@@ -291,6 +324,13 @@ declare module '@tanstack/react-router' {
       path: '/empresa'
       fullPath: '/empresa'
       preLoaderRoute: typeof EmpresaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/entrar': {
+      id: '/entrar'
+      path: '/entrar'
+      fullPath: '/entrar'
+      preLoaderRoute: typeof EntrarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/inteligencia': {
@@ -412,8 +452,10 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BateriasRoute: BateriasRoute,
   CadastrarRoute: CadastrarRoute,
+  CriarContaRoute: CriarContaRoute,
   DashboardRoute: DashboardRoute,
   EmpresaRoute: EmpresaRouteWithChildren,
+  EntrarRoute: EntrarRoute,
   InteligenciaRoute: InteligenciaRoute,
   JornadaRoute: JornadaRoute,
   MapaRoute: MapaRoute,
