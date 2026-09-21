@@ -1,6 +1,6 @@
 // Dados demonstrativos da CircularIA. Nenhuma informação real de empresas.
 
-export type ProfileId = "ofertante" | "reciclador" | "remanufaturador" | "segunda-vida" | "admin";
+export type ProfileId = "pessoa-fisica" | "ofertante" | "reciclador" | "remanufaturador" | "segunda-vida" | "admin";
 
 export type Plans = { intelligence: boolean; journey: boolean };
 
@@ -10,6 +10,7 @@ export type Profile = {
   company: string;
   role: string;
   region: string;
+  accountType: "PF" | "PJ";
   verification: VerificationStatus;
   plans: Plans;
 };
@@ -17,15 +18,17 @@ export type Profile = {
 export type VerificationStatus =
   | "Em análise"
   | "Empresa verificada"
+  | "Pessoa Física verificada"
   | "Documentação pendente"
   | "Documentação rejeitada";
 
 export const profiles: Profile[] = [
-  { id: "ofertante", label: "Empresa ofertante de baterias", company: "VoltFrota Mobilidade", role: "Ofertante de baterias", region: "Sudeste", verification: "Empresa verificada", plans: { intelligence: false, journey: false } },
-  { id: "reciclador", label: "Reciclador", company: "CicloMetais Brasil", role: "Reciclador homologado", region: "Sudeste", verification: "Empresa verificada", plans: { intelligence: true, journey: false } },
-  { id: "remanufaturador", label: "Remanufaturador", company: "ReCell Tecnologia", role: "Remanufaturador", region: "Sul", verification: "Em análise", plans: { intelligence: false, journey: true } },
-  { id: "segunda-vida", label: "Consumidor de segunda vida", company: "EcoStorage Energia", role: "Consumidor de segunda vida", region: "Sudeste", verification: "Empresa verificada", plans: { intelligence: true, journey: true } },
-  { id: "admin", label: "Administrador da plataforma", company: "CircularIA", role: "Administração", region: "Nacional", verification: "Empresa verificada", plans: { intelligence: true, journey: true } },
+  { id: "pessoa-fisica", label: "Pessoa Física", company: "Lucas Almeida", role: "Pessoa física · ofertante", region: "Sudeste", accountType: "PF", verification: "Pessoa Física verificada", plans: { intelligence: false, journey: false } },
+  { id: "ofertante", label: "Empresa ofertante", company: "VoltFrota Mobilidade", role: "Ofertante de baterias", region: "Sudeste", accountType: "PJ", verification: "Empresa verificada", plans: { intelligence: false, journey: false } },
+  { id: "reciclador", label: "Reciclador", company: "CicloMetais Brasil", role: "Reciclador homologado", region: "Sudeste", accountType: "PJ", verification: "Empresa verificada", plans: { intelligence: true, journey: false } },
+  { id: "remanufaturador", label: "Remanufaturador", company: "ReCell Tecnologia", role: "Remanufaturador", region: "Sul", accountType: "PJ", verification: "Em análise", plans: { intelligence: false, journey: true } },
+  { id: "segunda-vida", label: "Consumidor de segunda vida", company: "EcoStorage Energia", role: "Consumidor de segunda vida", region: "Sudeste", accountType: "PJ", verification: "Empresa verificada", plans: { intelligence: true, journey: true } },
+  { id: "admin", label: "Administrador", company: "CircularIA", role: "Administração", region: "Nacional", accountType: "PJ", verification: "Empresa verificada", plans: { intelligence: true, journey: true } },
 ];
 
 export type Asset = {

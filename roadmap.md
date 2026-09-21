@@ -10,3 +10,4 @@
 - [x] Implementar mapa real interativo do Brasil
 - [x] Adaptar Visão Geral, Intelligence e Journey aos serviços
 - [x] Validar o fluxo completo e a responsividade
+- [ ] Tornar todo o Mapa da Circularidade exclusivo do plano de dados CircularIA Intelligence
