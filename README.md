@@ -22,14 +22,14 @@ Esta secao contem os guias em video para demonstrar as principais funcionalidade
 
 ### 1. Visao Geral e Navegacao 
 <!-- Insira aqui o video de navegacao na vitrine e filtros -->
-[[Visao Geral]](https://www.youtube.com/watch?v=TSSEjZI6zi4&list=PLGuaDXm5A0qY&index=2)
+[Visao Geral](https://www.youtube.com/watch?v=TSSEjZI6zi4&list=PLGuaDXm5A0qY&index=2)
 ### 2. Cadastro e login
 <!-- Insira aqui o video tutorial de cadastro de novo ativo -->
-[[Cadastro e login]](https://www.youtube.com/watch?v=6h5V-Ctzqn4&list=PLGuaDXm5A0qY&index=2)
+[Cadastro e login](https://www.youtube.com/watch?v=6h5V-Ctzqn4&list=PLGuaDXm5A0qY&index=2)
 
 ### 3. Explicação da taxa e jornada da bateria
 <!-- Insira aqui o video demonstrando o aceite de match e chat -->
-[[jornada da bateria]](https://www.youtube.com/watch?v=lBJKcZokwcc&list=PLGuaDXm5A0qY&index=4)
+[jornada da bateria](https://www.youtube.com/watch?v=lBJKcZokwcc&list=PLGuaDXm5A0qY&index=4)
 
 ---
 
