@@ -10,4 +10,7 @@
 - [x] Implementar mapa real interativo do Brasil
 - [x] Adaptar Visão Geral, Intelligence e Journey aos serviços
 - [x] Validar o fluxo completo e a responsividade
-- [ ] Tornar todo o Mapa da Circularidade exclusivo do plano de dados CircularIA Intelligence
+- [x] Tornar todo o Mapa da Circularidade exclusivo do plano de dados CircularIA Intelligence
+- [x] Adicionar entrada e cadastro demonstrativo de Pessoa Física e Pessoa Jurídica
+- [x] Adaptar Minha Conta para Pessoa Física e manter Minha Empresa para Pessoa Jurídica
+- [x] Adicionar pontos, modos de calor, filtros e recorte agregado por estado ao mapa Intelligence
