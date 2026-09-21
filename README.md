@@ -1,4 +1,4 @@
-# CircularIA - Guia da Interface do Usuario (UI/UX) e Execucao
+# CircularIA - Guia da Interface do Usuario (UI/UX) 
 
 ## Introducao e Objetivo do Projeto
 
