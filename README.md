@@ -29,7 +29,7 @@ Esta secao contem os guias em video para demonstrar as principais funcionalidade
 
 ### 3. Explicação da taxa e jornada da bateria
 <!-- Insira aqui o video demonstrando o aceite de match e chat -->
-[[jornada da bateria]([https://img.youtube.com/vi/SEU_VIDEO_ID_AQUI/maxresdefault.jpg](https://www.youtube.com/watch?v=lBJKcZokwcc&list=PLGuaDXm5A0qY&index=3))]
+[[jornada da bateria]](https://www.youtube.com/watch?v=lBJKcZokwcc&list=PLGuaDXm5A0qY&index=4)
 
 ---
 
