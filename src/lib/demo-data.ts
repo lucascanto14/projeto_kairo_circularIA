@@ -2,7 +2,7 @@
 
 export type ProfileId = "pessoa-fisica" | "ofertante" | "reciclador" | "remanufaturador" | "segunda-vida" | "admin";
 
-export type Plans = { intelligence: boolean; journey: boolean };
+export type Plans = { intelligence: boolean };
 
 export type Profile = {
   id: ProfileId;
@@ -23,12 +23,12 @@ export type VerificationStatus =
   | "Documentação rejeitada";
 
 export const profiles: Profile[] = [
-  { id: "pessoa-fisica", label: "Pessoa Física", company: "Lucas Almeida", role: "Pessoa física · ofertante", region: "Sudeste", accountType: "PF", verification: "Pessoa Física verificada", plans: { intelligence: false, journey: false } },
-  { id: "ofertante", label: "Empresa ofertante", company: "VoltFrota Mobilidade", role: "Ofertante de baterias", region: "Sudeste", accountType: "PJ", verification: "Empresa verificada", plans: { intelligence: false, journey: false } },
-  { id: "reciclador", label: "Reciclador", company: "CicloMetais Brasil", role: "Reciclador homologado", region: "Sudeste", accountType: "PJ", verification: "Empresa verificada", plans: { intelligence: true, journey: false } },
-  { id: "remanufaturador", label: "Remanufaturador", company: "ReCell Tecnologia", role: "Remanufaturador", region: "Sul", accountType: "PJ", verification: "Em análise", plans: { intelligence: false, journey: true } },
-  { id: "segunda-vida", label: "Consumidor de segunda vida", company: "EcoStorage Energia", role: "Consumidor de segunda vida", region: "Sudeste", accountType: "PJ", verification: "Empresa verificada", plans: { intelligence: true, journey: true } },
-  { id: "admin", label: "Administrador", company: "CircularIA", role: "Administração", region: "Nacional", accountType: "PJ", verification: "Empresa verificada", plans: { intelligence: true, journey: true } },
+  { id: "pessoa-fisica", label: "Pessoa Física", company: "Lucas Almeida", role: "Pessoa física · ofertante", region: "Sudeste", accountType: "PF", verification: "Pessoa Física verificada", plans: { intelligence: false } },
+  { id: "ofertante", label: "Empresa ofertante", company: "VoltFrota Mobilidade", role: "Ofertante de baterias", region: "Sudeste", accountType: "PJ", verification: "Empresa verificada", plans: { intelligence: false } },
+  { id: "reciclador", label: "Reciclador", company: "CicloMetais Brasil", role: "Reciclador homologado", region: "Sudeste", accountType: "PJ", verification: "Empresa verificada", plans: { intelligence: true } },
+  { id: "remanufaturador", label: "Remanufaturador", company: "ReCell Tecnologia", role: "Remanufaturador", region: "Sul", accountType: "PJ", verification: "Em análise", plans: { intelligence: false } },
+  { id: "segunda-vida", label: "Consumidor de segunda vida", company: "EcoStorage Energia", role: "Consumidor de segunda vida", region: "Sudeste", accountType: "PJ", verification: "Empresa verificada", plans: { intelligence: true } },
+  { id: "admin", label: "Administrador", company: "CircularIA", role: "Administração", region: "Nacional", accountType: "PJ", verification: "Empresa verificada", plans: { intelligence: true } },
 ];
 
 export type Asset = {
@@ -190,18 +190,6 @@ export const initialConversations: Conversation[] = [
     proposals: [{ id: "p1", from: "me", qty: 24, unit: "R$ X", total: "R$ X", term: "15 dias", conditions: "Coleta compartilhada", notes: "Demonstrativo.", at: "19/09/2026 16:10" }],
     log: [],
   },
-];
-
-export const journeyEvents = [
-  { step: "Cadastro", date: "05/09/2026", company: "Empresa Verificada #1190", doc: "Ficha do ativo", condition: "Retirada de operação", soh: "78% (diagnóstico externo)", dest: "—", notes: "Ativo cadastrado com 8 unidades." },
-  { step: "Primeira aplicação", date: "2020 – 2026", company: "Frota demonstrativa", doc: "Histórico de uso", condition: "Em operação", soh: "—", dest: "—", notes: "Aplicação automotiva." },
-  { step: "Retirada", date: "18/08/2026", company: "Empresa Verificada #1190", doc: "Termo de retirada", condition: "Retirada de operação", soh: "—", dest: "—", notes: "Substituição programada." },
-  { step: "Diagnóstico", date: "21/08/2026", company: "Empresa Verificada #4127", doc: "Laudo externo", condition: "Apta para segunda vida", soh: "78%", dest: "—", notes: "Diagnóstico realizado por parceiro habilitado." },
-  { step: "Entrada no Marketplace", date: "06/09/2026", company: "CircularIA", doc: "Anúncio", condition: "Disponível", soh: "78%", dest: "—", notes: "Identidade protegida." },
-  { step: "Match", date: "08/09/2026", company: "Empresa Verificada #1842", doc: "Relatório de matching", condition: "—", soh: "78%", dest: "Remanufatura", notes: "Compatibilidade 91%." },
-  { step: "Negociação", date: "20/09/2026", company: "Empresa Verificada #1842", doc: "Histórico de propostas", condition: "—", soh: "—", dest: "Remanufatura", notes: "Em andamento." },
-  { step: "Coleta", date: "A definir", company: "Empresa Verificada #3390", doc: "Ordem de coleta", condition: "—", soh: "—", dest: "—", notes: "Etapa futura." },
-  { step: "Segunda vida / Remanufatura / Reciclagem", date: "A definir", company: "A definir", doc: "Certificado de destinação", condition: "—", soh: "—", dest: "A definir", notes: "Etapa futura." },
 ];
 
 export const TRANSACTION_PASSWORD = "1234";

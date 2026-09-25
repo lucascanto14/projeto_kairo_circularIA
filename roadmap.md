@@ -8,9 +8,10 @@
 - [x] Implementar senha de transação, taxa, liberação e conclusão
 - [x] Atualizar Minhas Baterias e área Minha Empresa
 - [x] Implementar mapa real interativo do Brasil
-- [x] Adaptar Visão Geral, Intelligence e Journey aos serviços
+- [x] Adaptar Visão Geral e Intelligence aos serviços
 - [x] Validar o fluxo completo e a responsividade
 - [x] Tornar todo o Mapa da Circularidade exclusivo do plano de dados CircularIA Intelligence
 - [x] Adicionar entrada e cadastro demonstrativo de Pessoa Física e Pessoa Jurídica
 - [x] Adaptar Minha Conta para Pessoa Física e manter Minha Empresa para Pessoa Jurídica
 - [x] Adicionar pontos, modos de calor, filtros e recorte agregado por estado ao mapa Intelligence
+- [x] Remover integralmente o produto CircularIA Journey e o acompanhamento individual do ciclo de vida
