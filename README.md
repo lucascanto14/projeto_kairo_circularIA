@@ -2,9 +2,7 @@
 
 ## Introducao e Objetivo do Projeto
 
-A CircularIA e uma plataforma digital B2B e B2C desenvolvida para conectar proprietarios de baterias e componentes pos-primeira vida (como montadoras, concessionarias, frotistas e pessoas fisicas) a recicladores, remanufaturadores e consumidores de segunda vida[cite: 1]. 
-
-O objetivo principal do projeto e criar uma camada digital de conexao e inteligencia de mercado que otimize a identificacao de destinos compativeis para cada ativo, reduzindo o esforco de busca, promovendo a rastreabilidade e prolongando o valor funcional e material das baterias no ecossistema de eletrificacao[cite: 1].
+A CircularIA e uma plataforma digital B2B e B2C desenvolvida para conectar proprietarios de baterias e componentes pos-primeira vida (como montadoras, concessionarias, frotistas e pessoas fisicas) a recicladores, remanufaturadores e consumidores de segunda vida. 
 
 ---
 
