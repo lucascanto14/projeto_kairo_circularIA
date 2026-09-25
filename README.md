@@ -235,15 +235,16 @@ Camada de proteção para manter as negociações dentro da CircularIA.
 
 ---
 
-## 9. Minhas Baterias (`/minhas-baterias`)
+## 9. Meus Ativos (`/baterias`)
 
 Área de gerenciamento dos ativos cadastrados.
 
 - Cards individuais com:
   - ID.
-  - Química.
-  - Capacidade.
-  - SoH.
+  - Tipo e categoria do ativo.
+  - Fabricante, modelo e condição.
+  - Química, capacidade e SoH quando for bateria.
+  - Tensão, potência, compatibilidade e teste funcional quando for componente.
   - Status.
   - Quantidade de matches.
   - Conversas ativas.
@@ -252,7 +253,7 @@ Camada de proteção para manter as negociações dentro da CircularIA.
 - Botão `Ver conversas`.
 - Botão `Editar`.
 
-Uma mesma bateria pode possuir várias negociações simultâneas com diferentes interessados.
+Um mesmo ativo pode possuir várias negociações simultâneas com diferentes interessados.
 
 ---
 
@@ -379,7 +380,7 @@ Dashboard analítico exclusivo do plano **CircularIA Intelligence**.
 
 - Meus Dados.
 - Status de Verificação.
-- Minhas Baterias.
+- Meus Ativos.
 - Minhas Conversas.
 - Segurança.
 - Senha de transação.
@@ -399,7 +400,7 @@ Dashboard analítico exclusivo do plano **CircularIA Intelligence**.
 - Responsável legal.
 - Responsável técnico, quando aplicável.
 - Documentação e Verificação.
-- Minhas Baterias.
+- Meus Ativos.
 - Minhas Conversas.
 - Usuários da Empresa.
 - Plano e Serviços.
