@@ -17,7 +17,6 @@ import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as EmpresaRouteImport } from './routes/empresa'
 import { Route as EntrarRouteImport } from './routes/entrar'
 import { Route as InteligenciaRouteImport } from './routes/inteligencia'
-import { Route as JornadaRouteImport } from './routes/jornada'
 import { Route as MapaRouteImport } from './routes/mapa'
 import { Route as MarketplaceRouteImport } from './routes/marketplace'
 import { Route as MatchesRouteImport } from './routes/matches'
@@ -68,11 +67,6 @@ const EntrarRoute = EntrarRouteImport.update({
 const InteligenciaRoute = InteligenciaRouteImport.update({
   id: '/inteligencia',
   path: '/inteligencia',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const JornadaRoute = JornadaRouteImport.update({
-  id: '/jornada',
-  path: '/jornada',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MapaRoute = MapaRouteImport.update({
@@ -140,7 +134,6 @@ export interface FileRoutesByFullPath {
   '/empresa': typeof EmpresaRouteWithChildren
   '/entrar': typeof EntrarRoute
   '/inteligencia': typeof InteligenciaRoute
-  '/jornada': typeof JornadaRoute
   '/mapa': typeof MapaRoute
   '/marketplace': typeof MarketplaceRoute
   '/matches': typeof MatchesRoute
@@ -161,7 +154,6 @@ export interface FileRoutesByTo {
   '/dashboard': typeof DashboardRoute
   '/entrar': typeof EntrarRoute
   '/inteligencia': typeof InteligenciaRoute
-  '/jornada': typeof JornadaRoute
   '/mapa': typeof MapaRoute
   '/marketplace': typeof MarketplaceRoute
   '/matches': typeof MatchesRoute
@@ -184,7 +176,6 @@ export interface FileRoutesById {
   '/empresa': typeof EmpresaRouteWithChildren
   '/entrar': typeof EntrarRoute
   '/inteligencia': typeof InteligenciaRoute
-  '/jornada': typeof JornadaRoute
   '/mapa': typeof MapaRoute
   '/marketplace': typeof MarketplaceRoute
   '/matches': typeof MatchesRoute
@@ -208,7 +199,6 @@ export interface FileRouteTypes {
     | '/empresa'
     | '/entrar'
     | '/inteligencia'
-    | '/jornada'
     | '/mapa'
     | '/marketplace'
     | '/matches'
@@ -229,7 +219,6 @@ export interface FileRouteTypes {
     | '/dashboard'
     | '/entrar'
     | '/inteligencia'
-    | '/jornada'
     | '/mapa'
     | '/marketplace'
     | '/matches'
@@ -251,7 +240,6 @@ export interface FileRouteTypes {
     | '/empresa'
     | '/entrar'
     | '/inteligencia'
-    | '/jornada'
     | '/mapa'
     | '/marketplace'
     | '/matches'
@@ -274,7 +262,6 @@ export interface RootRouteChildren {
   EmpresaRoute: typeof EmpresaRouteWithChildren
   EntrarRoute: typeof EntrarRoute
   InteligenciaRoute: typeof InteligenciaRoute
-  JornadaRoute: typeof JornadaRoute
   MapaRoute: typeof MapaRoute
   MarketplaceRoute: typeof MarketplaceRoute
   MatchesRoute: typeof MatchesRoute
@@ -338,13 +325,6 @@ declare module '@tanstack/react-router' {
       path: '/inteligencia'
       fullPath: '/inteligencia'
       preLoaderRoute: typeof InteligenciaRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/jornada': {
-      id: '/jornada'
-      path: '/jornada'
-      fullPath: '/jornada'
-      preLoaderRoute: typeof JornadaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mapa': {
@@ -457,7 +437,6 @@ const rootRouteChildren: RootRouteChildren = {
   EmpresaRoute: EmpresaRouteWithChildren,
   EntrarRoute: EntrarRoute,
   InteligenciaRoute: InteligenciaRoute,
-  JornadaRoute: JornadaRoute,
   MapaRoute: MapaRoute,
   MarketplaceRoute: MarketplaceRoute,
   MatchesRoute: MatchesRoute,

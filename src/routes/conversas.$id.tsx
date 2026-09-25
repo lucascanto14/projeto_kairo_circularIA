@@ -65,7 +65,6 @@ function ConversationPage() {
           {conversation.status === "Acordo fechado" && <Button onClick={() => setTransactionOpen(true)}><LockKeyhole />Confirmar com senha</Button>}
           {conversation.status === "Pagamento da taxa pendente" && <Button onClick={() => payFee(id)}>Simular pagamento da taxa</Button>}
           {conversation.status === "Identidades liberadas" && <Button onClick={() => completeOperation(id)}>Concluir operação</Button>}
-          {conversation.status === "Operação concluída" && plans.journey && <Button variant="outline" asChild><Link to="/jornada">Ver registro no Journey</Link></Button>}
           {conversation.status === "Operação concluída" && plans.intelligence && <Button variant="outline" asChild><Link to="/inteligencia">Ver impacto anonimizado</Link></Button>}
         </div></VerificationGate>
         <div className="rounded-lg border border-secondary bg-secondary/30 p-4 text-xs text-muted-foreground"><AlertTriangle className="mb-2 size-4 text-data-c" />Taxa CircularIA: X% do valor da operação. Taxa demonstrativa — valor a definir.</div>

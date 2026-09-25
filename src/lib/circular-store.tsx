@@ -119,7 +119,11 @@ export function CircularProvider({ children }: { children: ReactNode }) {
       return true;
     },
     payFee: (id) => update(id, (c) => addLog({ ...c, feePaid: true, identityRevealed: true, status: "Identidades liberadas" }, "Taxa CircularIA processada (simulação)", "Identidades liberadas")),
-    completeOperation: (id) => update(id, (c) => addLog({ ...c, status: "Operação concluída" }, "Operação concluída", "Operação concluída")),
+    completeOperation: (id) => update(id, (c) => addLog({
+      ...c,
+      status: "Operação concluída",
+      messages: [...c.messages, { id: uid(), from: "system", text: "Operação concluída. Os dados anonimizados passam a alimentar os indicadores agregados do CircularIA Intelligence.", at: stamp() }],
+    }, "Operação concluída; dados anonimizados agregados ao CircularIA Intelligence", "Operação concluída")),
   };
 
   return <CircularContext.Provider value={value}>{children}</CircularContext.Provider>;

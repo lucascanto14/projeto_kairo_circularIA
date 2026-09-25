@@ -32,7 +32,6 @@ const nav = [
   { to: "/inteligencia", label: "Inteligência de Mercado", icon: Activity, plan: "intelligence" as const },
   { to: "/baterias", label: "Minhas Baterias", icon: BatteryCharging },
   { to: "/empresa", label: "Minha Empresa", icon: Building2 },
-  { to: "/jornada", label: "Jornada da Bateria", icon: Recycle, plan: "journey" as const },
 ];
 
 export const companyTabs = [
@@ -97,7 +96,7 @@ export function AppShell({ title, subtitle, children, actions }: { title: string
   </div>;
 }
 
-export function LockedFeature({ product, description, children }: { product: "CircularIA Intelligence" | "CircularIA Journey"; description: string; children?: ReactNode }) {
+export function LockedFeature({ product, description, children }: { product: "CircularIA Intelligence"; description: string; children?: ReactNode }) {
   return <div className="rounded-lg border border-dashed border-primary/40 bg-accent/40 p-8 text-center">
     <span className="mx-auto grid size-12 place-items-center rounded-full bg-primary/10 text-primary"><Lock className="size-5" /></span>
     <h2 className="mt-4 text-xl font-bold">🔒 {product}</h2>
