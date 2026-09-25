@@ -491,7 +491,8 @@ Registrar:
 ## 20. Fluxo Completo da Operação
 
 Fluxo principal da CircularIA:
-
+##referencias
+notas.txt
 ```text
 Cadastro
     ↓
@@ -528,3 +529,5 @@ Conclusão da Operação
 Dados Anonimizados
     ↓
 CircularIA Intelligence
+
+
