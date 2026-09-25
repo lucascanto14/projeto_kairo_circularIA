@@ -27,10 +27,6 @@ Esta secao contem os guias em video para demonstrar as principais funcionalidade
 <!-- Insira aqui o video tutorial de cadastro de novo ativo -->
 [Cadastro e login](https://www.youtube.com/watch?v=6h5V-Ctzqn4&list=PLGuaDXm5A0qY&index=2)
 
-### 3. Explicação da taxa e jornada da bateria
-<!-- Insira aqui o video demonstrando o aceite de match e chat -->
-[jornada da bateria](https://www.youtube.com/watch?v=lBJKcZokwcc&list=PLGuaDXm5A0qY&index=4)
-
 ---
 
 ## Visao Geral da Interface
@@ -377,38 +373,7 @@ Dashboard analítico exclusivo do plano **CircularIA Intelligence**.
 
 ---
 
-## 14. Jornada da Bateria (`/jornada`)
-
-Área de rastreabilidade individual dos ativos acompanhados pelo **CircularIA Journey**.
-
-### Linha do tempo
-
-1. Cadastro.
-2. Primeira aplicação.
-3. Retirada.
-4. Diagnóstico.
-5. Entrada no Marketplace.
-6. Match.
-7. Negociação.
-8. Coleta.
-9. Segunda Vida, Remanufatura ou Reciclagem.
-
-### Informações registradas por evento
-
-- Data.
-- Etapa.
-- Responsável.
-- Documentação.
-- Condição.
-- SoH.
-- Destino.
-- Observações.
-
-Usuários sem o serviço Journey visualizam a funcionalidade bloqueada.
-
----
-
-## 15. Minha Conta — Pessoa Física (`/minha-conta`)
+## 14. Minha Conta — Pessoa Física (`/minha-conta`)
 
 Área de gerenciamento do usuário individual.
 
@@ -493,19 +458,10 @@ Assinatura mensal para acesso a:
 - Análises regionais.
 - Tendências.
 
-### CircularIA Journey
-
-Modelo de cobrança por:
-
-- Assinatura mensal.
-- Pacote por quantidade de baterias.
-
 ### Combinações possíveis
 
 - Marketplace.
 - Marketplace + Intelligence.
-- Marketplace + Journey.
-- Marketplace + Intelligence + Journey.
 
 ---
 
@@ -569,8 +525,6 @@ Pagamento
 Liberação das Identidades
     ↓
 Conclusão da Operação
-    ↓
-CircularIA Journey
     ↓
 Dados Anonimizados
     ↓

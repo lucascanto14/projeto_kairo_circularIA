@@ -14,4 +14,4 @@
 - [x] Adicionar entrada e cadastro demonstrativo de Pessoa Física e Pessoa Jurídica
 - [x] Adaptar Minha Conta para Pessoa Física e manter Minha Empresa para Pessoa Jurídica
 - [x] Adicionar pontos, modos de calor, filtros e recorte agregado por estado ao mapa Intelligence
-- [x] Remover integralmente o produto CircularIA Journey e o acompanhamento individual do ciclo de vida
+- [x] Remover integralmente o produto descontinuado e o acompanhamento individual do ciclo de vida
