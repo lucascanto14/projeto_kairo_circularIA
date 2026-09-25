@@ -34,12 +34,22 @@ export const profiles: Profile[] = [
 export type Asset = {
   id: string;
   name: string;
-  chemistry: "NMC" | "LFP" | "NCA";
-  capacity: string;
+  type: string;
+  category: "Bateria" | "Componente eletrônico" | "Sistema de propulsão" | "Sistema de recarga";
+  manufacturer: string;
+  model: string;
+  chemistry?: "NMC" | "LFP" | "NCA";
+  capacity?: string;
+  voltage: string;
+  power?: string;
+  partNumber?: string;
+  compatibility?: string;
   qty: number;
-  soh: number | null;
-  sohSource: "Informado pelo proprietário" | "BMS" | "Diagnóstico externo" | "Documentação técnica";
+  soh?: number | null;
+  sohSource?: "Informado pelo proprietário" | "BMS" | "Diagnóstico externo" | "Documentação técnica";
   condition: string;
+  tested: boolean;
+  documentation: string;
   state: string;
   region: string;
   city: string;
@@ -49,10 +59,13 @@ export type Asset = {
 };
 
 export const assets: Asset[] = [
-  { id: "BAT-00192", name: "Pack NMC 72 kWh", chemistry: "NMC", capacity: "72 kWh", qty: 8, soh: 78, sohSource: "Diagnóstico externo", condition: "Retirada de operação", state: "SP", region: "Sudeste", city: "São Paulo (região aproximada)", status: "Em negociação", goal: "Aberto à recomendação da plataforma", matches: 5 },
-  { id: "BAT-00207", name: "Pack LFP 52 kWh", chemistry: "LFP", capacity: "52 kWh", qty: 1, soh: 74, sohSource: "BMS", condition: "Retirada de operação", state: "SP", region: "Sudeste", city: "São José dos Campos (região aproximada)", status: "Disponível", goal: "Segunda vida", matches: 3 },
-  { id: "BAT-00318", name: "Módulos NMC 5 kWh", chemistry: "NMC", capacity: "5 kWh", qty: 24, soh: 82, sohSource: "Informado pelo proprietário", condition: "Em operação", state: "SP", region: "Sudeste", city: "Campinas (região aproximada)", status: "Disponível", goal: "Remanufatura", matches: 6 },
-  { id: "BAT-00421", name: "Pack NCA 65 kWh", chemistry: "NCA", capacity: "65 kWh", qty: 3, soh: 58, sohSource: "Documentação técnica", condition: "Requer avaliação externa", state: "PR", region: "Sul", city: "Curitiba (região aproximada)", status: "Disponível", goal: "Reciclagem", matches: 2 },
+  { id: "BAT-00192", name: "Pack NMC 72 kWh", type: "Pack de bateria", category: "Bateria", manufacturer: "Fabricante demonstrativo", model: "Pack NMC 72", chemistry: "NMC", capacity: "72 kWh", voltage: "400 V", qty: 8, soh: 78, sohSource: "Diagnóstico externo", condition: "Retirada de operação", tested: true, documentation: "Laudo externo disponível", state: "SP", region: "Sudeste", city: "São Paulo (região aproximada)", status: "Em negociação", goal: "Aberto à recomendação da plataforma", matches: 5 },
+  { id: "BAT-00207", name: "Pack LFP 52 kWh", type: "Pack de bateria", category: "Bateria", manufacturer: "Fabricante demonstrativo", model: "Pack LFP 52", chemistry: "LFP", capacity: "52 kWh", voltage: "350 V", qty: 1, soh: 74, sohSource: "BMS", condition: "Retirada de operação", tested: true, documentation: "Dados de BMS disponíveis", state: "SP", region: "Sudeste", city: "São José dos Campos (região aproximada)", status: "Disponível", goal: "Segunda vida", matches: 3 },
+  { id: "BAT-00318", name: "Módulos NMC 5 kWh", type: "Módulo de bateria", category: "Bateria", manufacturer: "Fabricante demonstrativo", model: "Módulo NMC 5", chemistry: "NMC", capacity: "5 kWh", voltage: "48 V", qty: 24, soh: 82, sohSource: "Informado pelo proprietário", condition: "Em operação", tested: true, documentation: "Ficha técnica disponível", state: "SP", region: "Sudeste", city: "Campinas (região aproximada)", status: "Disponível", goal: "Remanufatura", matches: 6 },
+  { id: "BMS-00512", name: "BMS veicular 400 V", type: "BMS", category: "Componente eletrônico", manufacturer: "E-Motion Systems", model: "BMS-X400", voltage: "400 V", power: "12 W", partNumber: "BMS-X400-BR", compatibility: "Packs NMC e LFP de 350–450 V", qty: 18, condition: "Funcional, retirado de frota", tested: true, documentation: "Laudo funcional disponível", state: "SP", region: "Sudeste", city: "Sorocaba (região aproximada)", status: "Disponível", goal: "Reutilização", matches: 4 },
+  { id: "INV-00604", name: "Inversor de tração 150 kW", type: "Inversor", category: "Componente eletrônico", manufacturer: "DriveCore", model: "DC-150", voltage: "400 V", power: "150 kW", partNumber: "INV-DC150-02", compatibility: "Motores síncronos 350–450 V", qty: 6, condition: "Recondicionado", tested: true, documentation: "Relatório de bancada disponível", state: "MG", region: "Sudeste", city: "Belo Horizonte (região aproximada)", status: "Disponível", goal: "Recondicionamento", matches: 7 },
+  { id: "OBC-00731", name: "Carregador embarcado 11 kW", type: "Carregador embarcado", category: "Sistema de recarga", manufacturer: "ChargeLab", model: "OBC-11", voltage: "400 V", power: "11 kW", partNumber: "OBC11-T2", compatibility: "Entrada trifásica, conector Tipo 2", qty: 12, condition: "Usado, não testado", tested: false, documentation: "Ficha técnica disponível", state: "PR", region: "Sul", city: "Curitiba (região aproximada)", status: "Em análise", goal: "Reparo", matches: 3 },
+  { id: "MOT-00842", name: "Motor elétrico 90 kW", type: "Motor elétrico", category: "Sistema de propulsão", manufacturer: "E-Drive", model: "ED90", voltage: "360 V", power: "90 kW", partNumber: "ED90-360", compatibility: "Plataformas leves de 300–400 V", qty: 4, condition: "Funcional", tested: true, documentation: "Diagnóstico externo disponível", state: "RS", region: "Sul", city: "Porto Alegre (região aproximada)", status: "Disponível", goal: "Remanufatura", matches: 5 },
 ];
 
 export type Counterpart = {
@@ -114,13 +127,17 @@ export const matches: Match[] = [
 ];
 
 export const futureCriteria = [
-  "Custo logístico", "Valor residual", "Impacto ambiental", "Capacidade operacional", "Previsão de oferta e demanda", "Probabilidade de aceitação",
+  "Tipo de ativo", "Fabricante e modelo", "Compatibilidade técnica", "Condição funcional", "Custo logístico", "Valor residual", "Impacto ambiental", "Capacidade operacional",
 ];
 
 export const demandProfile = {
-  type: "Pack completo",
+  type: "Pack de bateria, BMS e inversor",
+  category: "Baterias e eletrônica de potência",
   chemistry: "NMC / LFP",
   capacity: "40 a 80 kWh",
+  voltage: "350 a 450 V",
+  power: "Até 180 kW",
+  compatibility: "Plataformas veiculares leves e armazenamento estacionário",
   qty: "Até 20 unidades por mês",
   condition: "Retirada de operação, sem avarias estruturais",
   minSoh: "65%",

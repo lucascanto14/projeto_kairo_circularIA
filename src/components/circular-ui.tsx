@@ -1,5 +1,5 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Activity, BatteryCharging, BrainCircuit, Building2, CheckCircle2, ChevronRight, CircleGauge, Factory, LayoutDashboard, Lock, Map, Menu, MessageSquare, PackagePlus, Recycle, Search, ShieldCheck, Sparkles, Store, UserRound, Users, X } from "lucide-react";
+import { Activity, Boxes, BrainCircuit, Building2, CheckCircle2, ChevronRight, CircleGauge, Factory, LayoutDashboard, Lock, Map, Menu, MessageSquare, PackagePlus, Recycle, Search, ShieldCheck, Sparkles, Store, UserRound, Users, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { useCircular } from "@/lib/circular-store";
@@ -30,7 +30,7 @@ const nav = [
   { to: "/matches", label: "Matches Inteligentes", icon: BrainCircuit },
   { to: "/mapa", label: "Mapa da Circularidade", icon: Map, plan: "intelligence" as const },
   { to: "/inteligencia", label: "Inteligência de Mercado", icon: Activity, plan: "intelligence" as const },
-  { to: "/baterias", label: "Minhas Baterias", icon: BatteryCharging },
+  { to: "/baterias", label: "Meus Ativos", icon: Boxes },
   { to: "/empresa", label: "Minha Empresa", icon: Building2 },
 ];
 
@@ -134,7 +134,7 @@ export function StatCard({ label, value, detail, icon: Icon = CircleGauge }: { l
 export function Pillars() { return <div className="grid gap-3 md:grid-cols-3">{[["Conectar", "Oferta e demanda em um ecossistema confiável.", Search], ["Otimizar", "Matching explicável como apoio à decisão.", BrainCircuit], ["Aprender", "Dados da cadeia viram inteligência de mercado.", Activity]].map(([t, d, I], i) => { const Icon = I as typeof Search; return <div key={t as string} className="flex gap-4 border-l-2 border-primary bg-card p-4"><span className="font-display text-xl font-bold text-primary">0{i + 1}</span><div><p className="font-bold">{t as string}</p><p className="mt-1 text-sm text-muted-foreground">{d as string}</p></div><Icon className="ml-auto size-5 text-primary" /></div>; })}</div>; }
 
 export function SectionTitle({ children, aside }: { children: ReactNode; aside?: ReactNode }) { return <div className="mb-4 flex items-center justify-between gap-3"><h2 className="text-lg font-bold">{children}</h2>{aside}</div>; }
-export function Disclaimer() { return <div className="rounded-md border border-border bg-muted p-3 text-xs leading-relaxed text-muted-foreground"><strong className="text-foreground">Apoio à decisão.</strong> Resultados não garantem condição, segurança ou destinação técnica. O SoH é informado ou proveniente de diagnóstico externo; a CircularIA não realiza diagnóstico físico. Inspeção, ensaio ou certificação permanecem com agentes tecnicamente habilitados.</div>; }
+export function Disclaimer() { return <div className="rounded-md border border-border bg-muted p-3 text-xs leading-relaxed text-muted-foreground"><strong className="text-foreground">Apoio à decisão.</strong> Resultados não garantem condição, compatibilidade, segurança ou destinação técnica. Para baterias, o SoH é informado ou proveniente de diagnóstico externo; a CircularIA não realiza diagnóstico físico. Inspeção, ensaio ou certificação permanecem com agentes tecnicamente habilitados.</div>; }
 export function Bar({ label, value, max = 100 }: { label: string; value: number; max?: number }) { return <div><div className="mb-1.5 flex justify-between text-xs"><span>{label}</span><strong>{value}{max === 100 ? "%" : ""}</strong></div><div className="h-2 rounded-full bg-muted"><div className="h-full rounded-full bg-primary" style={{ width: `${Math.min(100, (value / max) * 100)}%` }} /></div></div>; }
 export function EmptyAction({ children }: { children: ReactNode }) { return <Button variant="outline" className="gap-2">{children}<ChevronRight className="size-4" /></Button>; }
 export function CheckLine({ children }: { children: ReactNode }) { return <span className="flex items-center gap-2 text-sm"><CheckCircle2 className="size-4 shrink-0 text-primary" />{children}</span>; }

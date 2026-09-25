@@ -43,7 +43,7 @@ function ConversationPage() {
   const submitMessage = () => { if (!text.trim()) return; sendMessage(id, text.trim()); setText(""); };
   const finalStatus = ["Identidades liberadas", "Operação concluída"].includes(conversation.status);
 
-  return <AppShell title="Negociação protegida" subtitle="Conversa vinculada à bateria, ao match e às duas empresas participantes.">
+  return <AppShell title="Negociação protegida" subtitle="Conversa vinculada ao ativo, ao match e às duas empresas participantes.">
     <Button variant="ghost" className="mb-5" asChild><Link to="/empresa/conversas"><ArrowLeft />Todas as conversas</Link></Button>
     <div className="mb-5 overflow-x-auto rounded-lg border border-border bg-card p-4"><div className="flex min-w-[760px] items-center">{steps.map((s, i) => <div key={s} className="flex flex-1 items-center"><div className="flex min-w-0 flex-col items-center text-center"><span className={`grid size-7 place-items-center rounded-full text-xs font-bold ${i <= progress ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>{i < progress ? <CheckCircle2 className="size-4" /> : i + 1}</span><span className="mt-2 max-w-24 text-[10px] text-muted-foreground">{s}</span></div>{i < steps.length - 1 && <span className={`mb-5 h-0.5 flex-1 ${i < progress ? "bg-primary" : "bg-border"}`} />}</div>)}</div></div>
     <div className="grid gap-5 xl:grid-cols-[1fr_350px]">

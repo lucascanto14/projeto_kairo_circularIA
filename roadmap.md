@@ -15,3 +15,8 @@
 - [x] Adaptar Minha Conta para Pessoa Física e manter Minha Empresa para Pessoa Jurídica
 - [x] Adicionar pontos, modos de calor, filtros e recorte agregado por estado ao mapa Intelligence
 - [x] Remover integralmente o produto descontinuado e o acompanhamento individual do ciclo de vida
+- [x] Generalizar a plataforma para baterias, componentes eletrônicos e ativos da eletrificação
+- [x] Adaptar cadastro, Marketplace e matching conforme o tipo de ativo
+- [x] Renomear Minhas Baterias para Meus Ativos e ampliar dados demonstrativos
+- [x] Preparar Mapa e Intelligence com categorias de ativos
+- [x] Validar fluxos generalizados em desktop e celular
